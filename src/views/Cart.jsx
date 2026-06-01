@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { useShop } from '../context/ShopContext';
 import { Trash2, Plus, Minus, ArrowRight, ShoppingBag, ArrowLeft } from 'lucide-react';
