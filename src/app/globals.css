@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --color-primary-blue: #024ad8;
+  --color-active-blue: #0133a1;
+  /* Darker for hover/active */
+}
+
+
+:root {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ── GoDaddy Font Link ────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'GDSherpa';
+  src: url('https://img6.wsimg.com/ux-assets/@ux/fonts/4.5.0/GDSherpa-vf4.woff2') format('woff2');
+  font-display: swap;
+}
+
+@keyframes ken-burns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 20s linear infinite alternate;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+/* Hide pre-rendered SEO content to prevent flashing before React hydration */
+#root > :not(.min-h-screen) {
+  display: none !important;
+}

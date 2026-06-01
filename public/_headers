@@ -1,0 +1,39 @@
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: same-origin
+  Cache-Control: public, max-age=0, must-revalidate
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/homeImage/*
+  Cache-Control: public, max-age=604800, must-revalidate
+
+/hero/*
+  Cache-Control: public, max-age=604800, must-revalidate
+
+/logo/*
+  Cache-Control: public, max-age=604800, must-revalidate
+
+/footer/*
+  Cache-Control: public, max-age=604800, must-revalidate
+
+/*.webp
+  Cache-Control: public, max-age=604800, must-revalidate
+
+/*.png
+  Cache-Control: public, max-age=604800, must-revalidate
+
+/*.jpg
+  Cache-Control: public, max-age=604800, must-revalidate
+
+/*.jpeg
+  Cache-Control: public, max-age=604800, must-revalidate

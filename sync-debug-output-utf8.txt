@@ -1,0 +1,176 @@
+﻿DEBUG: about C:\Users\pc\Desktop\projects\innovation\src\app\about\page.jsx {
+  title: '',
+  description: 'Learn about Innovation Dynamics Group LLC, a registered independent online retailer based in Blaine, Minnesota, specializing in professional printing solutions.',
+  keywords: 'about innovation dynamics group, printer retailer blaine minnesota, independent online retailer, printing solutions, IDG printers',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: accessibility C:\Users\pc\Desktop\projects\innovation\src\app\accessibility\page.jsx {
+  title: '',
+  description: 'Learn about our commitment to web accessibility at Innovation Dynamics Group.',
+  keywords: 'accessibility statement, web accessibility, ADA compliance, Innovation Dynamics Group accessibility',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: buying-guide C:\Users\pc\Desktop\projects\innovation\src\app\buying-guide\page.jsx {
+  title: '',
+  description: 'Find the perfect printer with our expert Buying Guide at Innovation Dynamics Group. Tips and recommendations for every need.',
+  keywords: 'innovation dynamics group, buying guide, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: cart C:\Users\pc\Desktop\projects\innovation\src\app\cart\page.jsx {
+  title: '',
+  description: 'View your selected printers and supplies in your Innovation Dynamics Group shopping cart. Proceed to our secure checkout for fast, reliable shipping.',
+  keywords: 'innovation dynamics group, cart, printers, office supplies, printer retailer',
+  robots: 'noindex, follow'
+}
+DEBUG: checkout C:\Users\pc\Desktop\projects\innovation\src\app\checkout\page.jsx {
+  title: '',
+  description: 'Complete your order with Innovation Dynamics Group. Secure checkout process with multiple payment options and fast shipping across the USA.',
+  keywords: 'innovation dynamics group, checkout, printers, office supplies, printer retailer',
+  robots: 'noindex, nofollow'
+}
+DEBUG: contact C:\Users\pc\Desktop\projects\innovation\src\app\contact\page.jsx {
+  title: '',
+  description: 'Get in touch with Innovation Dynamics Group for support, sales inquiries, or technical assistance with your professional printing solutions.',
+  keywords: 'innovation dynamics group, contact, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: cookie-policy C:\Users\pc\Desktop\projects\innovation\src\app\cookie-policy\page.jsx {
+  title: '',
+  description: 'Learn how we use cookies to improve your experience at Innovation Dynamics Group.',
+  keywords: 'innovation dynamics group, cookie policy, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: disclaimer C:\Users\pc\Desktop\projects\innovation\src\app\disclaimer\page.jsx {
+  title: '',
+  description: 'Read our legal disclaimer for Innovation Dynamics Group LLC.',
+  keywords: 'innovation dynamics group, disclaimer, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: do-not-sell C:\Users\pc\Desktop\projects\innovation\src\app\do-not-sell\page.jsx {
+  title: '',
+  description: 'Exercise your right to opt-out of the sale of your personal information at Innovation Dynamics Group.',
+  keywords: 'innovation dynamics group, do not sell, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: faqs C:\Users\pc\Desktop\projects\innovation\src\app\faqs\page.jsx {
+  title: '',
+  description: 'Find answers to common questions about our printers, supplies, ordering process, and shipping policies at Innovation Dynamics Group.',
+  keywords: 'innovation dynamics group, faqs, printers, office supplies, printer retailer',
+  robots: 'index, follow'
+}
+DEBUG: home-printers C:\Users\pc\Desktop\projects\innovation\src\app\home-printers\page.jsx {
+  title: '',
+  description: 'Shop high-quality HP Home Printers at Innovation Dynamics Group. Perfect for everyday printing, photos, and home office needs.',
+  keywords: 'innovation dynamics group, home printers, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG:  C:\Users\pc\Desktop\projects\innovation\src\app\page.jsx {
+  title: '',
+  description: '',
+  keywords: '',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: ink-toner C:\Users\pc\Desktop\projects\innovation\src\app\ink-toner\page.jsx {
+  title: '',
+  description: "Shop genuine HP Ink & Toner cartridges at Innovation Dynamics Group. Ensure high-quality prints and prolong your printer's life with original supplies.",
+  keywords: 'innovation dynamics group, ink toner, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: inkjet-printers C:\Users\pc\Desktop\projects\innovation\src\app\inkjet-printers\page.jsx {
+  title: '',
+  description: 'Discover versatile HP Inkjet Printers at Innovation Dynamics Group. Superior color printing for photos, marketing materials, and more.',
+  keywords: 'innovation dynamics group, inkjet printers, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: laser-printers C:\Users\pc\Desktop\projects\innovation\src\app\laser-printers\page.jsx {
+  title: '',
+  description: 'Shop fast and efficient HP Laser Printers at Innovation Dynamics Group. Ideal for high-volume text printing and sharp documents.',
+  keywords: 'innovation dynamics group, laser printers, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: login C:\Users\pc\Desktop\projects\innovation\src\app\login\page.jsx {
+  title: '',
+  description: 'Sign in to your Innovation Dynamics Group account to manage your orders and profile.',
+  keywords: 'innovation dynamics group, login, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: office-printers C:\Users\pc\Desktop\projects\innovation\src\app\office-printers\page.jsx {
+  title: '',
+  description: 'Explore professional HP Office Printers at Innovation Dynamics Group. High-performance solutions for business productivity.',
+  keywords: 'innovation dynamics group, office printers, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: privacy-policy C:\Users\pc\Desktop\projects\innovation\src\app\privacy-policy\page.jsx {
+  title: '',
+  description: 'Review the Privacy Policy of Innovation Dynamics Group LLC. Understand how we handle your data with transparency and security.',
+  keywords: 'innovation dynamics group, privacy policy, printers, office supplies, printer retailer',
+  robots: 'index, follow'
+}
+DEBUG: refund-policy C:\Users\pc\Desktop\projects\innovation\src\app\refund-policy\page.jsx {
+  title: '',
+  description: 'Learn about our refund process and eligibility at Innovation Dynamics Group.',
+  keywords: 'innovation dynamics group, refund policy, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: resources C:\Users\pc\Desktop\projects\innovation\src\app\resources\page.jsx {
+  title: '',
+  description: 'Access technical resources, driver links, and support information at Innovation Dynamics Group.',
+  keywords: 'innovation dynamics group, resources, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: return-exchange C:\Users\pc\Desktop\projects\innovation\src\app\return-exchange\page.jsx {
+  title: '',
+  description: 'View our return and exchange procedures at Innovation Dynamics Group.',
+  keywords: 'innovation dynamics group, return exchange, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: shipping-policy C:\Users\pc\Desktop\projects\innovation\src\app\shipping-policy\page.jsx {
+  title: '',
+  description: 'View our shipping rates, timelines, and logistical framework for the United States and Canada.',
+  keywords: 'innovation dynamics group, shipping policy, printers, office supplies, printer retailer',
+  robots: 'index, follow'
+}
+DEBUG: shop C:\Users\pc\Desktop\projects\innovation\src\app\shop\page.jsx {
+  title: '',
+  description: 'Shop all HP printers and supplies at Innovation Dynamics Group. Browse our full catalog of home, office, laser, and inkjet solutions.',
+  keywords: 'innovation dynamics group, shop, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: signup C:\Users\pc\Desktop\projects\innovation\src\app\signup\page.jsx {
+  title: '',
+  description: 'Create an account at Innovation Dynamics Group to track your orders and manage your printing needs.',
+  keywords: 'innovation dynamics group, signup, printers, office supplies, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+DEBUG: terms-conditions C:\Users\pc\Desktop\projects\innovation\src\app\terms-conditions\page.jsx {
+  title: '',
+  description: '',
+  keywords: '',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
+Patched src\app\about\page.jsx
+Patched src\app\accessibility\page.jsx
+Patched src\app\buying-guide\page.jsx
+Patched src\app\cart\page.jsx
+Patched src\app\checkout\page.jsx
+Patched src\app\contact\page.jsx
+Patched src\app\cookie-policy\page.jsx
+Patched src\app\disclaimer\page.jsx
+Patched src\app\do-not-sell\page.jsx
+Patched src\app\faqs\page.jsx
+Patched src\app\home-printers\page.jsx
+Patched src\app\page.jsx
+Patched src\app\ink-toner\page.jsx
+Patched src\app\inkjet-printers\page.jsx
+Patched src\app\laser-printers\page.jsx
+Patched src\app\login\page.jsx
+Patched src\app\office-printers\page.jsx
+Patched src\app\privacy-policy\page.jsx
+Patched src\app\refund-policy\page.jsx
+Patched src\app\resources\page.jsx
+Patched src\app\return-exchange\page.jsx
+Patched src\app\shipping-policy\page.jsx
+Patched src\app\shop\page.jsx
+Patched src\app\signup\page.jsx
+Patched src\app\terms-conditions\page.jsx
+Patched 25 page metadata files.

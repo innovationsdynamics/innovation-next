@@ -1,0 +1,48 @@
+# robots.txt — Innovation Dynamics Group LLC
+# https://innovationdynamicsgroup.com
+
+User-agent: *
+Allow: /
+
+# Pages that should not be indexed
+Disallow: /admin/
+Disallow: /admin/login
+Disallow: /admin/dashboard
+Disallow: /admin/products
+Disallow: /admin/categories
+Disallow: /admin/orders
+Disallow: /admin/customers
+Disallow: /admin/chat
+Disallow: /admin/analytics
+Disallow: /admin/settings
+Disallow: /checkout
+Disallow: /cart
+Disallow: /wishlist
+Disallow: /orders
+Disallow: /order/
+Disallow: /profile
+Disallow: /reset-password
+Disallow: /forgot-password
+
+# Allow all public-facing pages
+Allow: /shop
+Allow: /shop/
+Allow: /product/
+Allow: /about
+Allow: /contact
+Allow: /faqs
+Allow: /track-order
+Allow: /privacy-policy
+Allow: /terms-conditions
+Allow: /return-refund
+Allow: /return-exchange
+Allow: /shipping-policy
+Allow: /cookies-policy
+Allow: /disclaimer
+Allow: /do-not-sell
+Allow: /accessibility
+Allow: /buying-guide
+Allow: /resources
+
+# Sitemap
+Sitemap: https://innovationdynamicsgroup.com/sitemap.xml
