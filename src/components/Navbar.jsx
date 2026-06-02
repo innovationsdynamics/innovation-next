@@ -11,7 +11,7 @@ import { useShop } from '../context/ShopContext';
 import { useAuth } from '../context/AuthContext';
 import { useDispatch } from 'react-redux';
 import { USER_LOGOUT } from '../redux/constants/userConstants';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 /**
  * Navbar Component
@@ -26,7 +26,7 @@ const Navbar = () => {
     const [searchTerm, setSearchTerm] = useState('');            // Global search query
     const { cartCount } = useShop();
     const { user, isAuthenticated, logout } = useAuth();
-    const router = useRouter();
+    const pathname = usePathname();
     const dispatch = useDispatch();
 
     /**
@@ -72,26 +72,33 @@ const Navbar = () => {
     /**
      * Determines CSS classes for desktop navigation links based on active route
      */
-    const getLinkClasses = (path) => {
-        const currentPath = window.location.pathname;
-        const baseClasses = "text-[11px] font-bold uppercase tracking-[0.12em] transition-all duration-300 hover:text-white/70 relative py-1";
-        const activeClasses = "after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-white";
-        const inactiveClasses = "text-white";
+    const normalizePath = (path) => {
+        if (!path) return '/';
+        return path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
+    };
 
-        const isHome = path === '/' && (currentPath === '/' || currentPath === '/index');
-        const isMatch = currentPath === path || currentPath === `${path}`;
+    const getLinkClasses = (path) => {
+        const currentPath = normalizePath(pathname);
+        const targetPath = normalizePath(path);
+        const baseClasses = "text-[11px] font-bold uppercase tracking-[0.12em] transition-all duration-300 hover:text-white/70 py-1";
+        const activeClasses = "text-white";
+        const inactiveClasses = "text-white/80";
+
+        const isHome = targetPath === '/' && (currentPath === '/' || currentPath === '/index');
+        const isMatch = currentPath === targetPath;
 
         return (isHome || isMatch) ? `${baseClasses} ${activeClasses}` : `${baseClasses} ${inactiveClasses}`;
     };
 
     const getMobileLinkClasses = (path) => {
-        const currentPath = window.location.pathname;
+        const currentPath = normalizePath(pathname);
+        const targetPath = normalizePath(path);
         const baseClasses = "block px-3 py-2 rounded-md text-base font-medium transition-colors";
         const activeClasses = "text-white bg-white/20";
         const inactiveClasses = "text-white hover:text-white/80 hover:bg-white/10";
 
-        const isHome = path === '/' && (currentPath === '/' || currentPath === '/index');
-        const isMatch = currentPath === path || currentPath === `${path}`;
+        const isHome = targetPath === '/' && (currentPath === '/' || currentPath === '/index');
+        const isMatch = currentPath === targetPath;
 
         return (isHome || isMatch) ? `${baseClasses} ${activeClasses}` : `${baseClasses} ${inactiveClasses}`;
     };
@@ -131,7 +138,7 @@ const Navbar = () => {
                         >
                             <button
                                 onClick={toggleShopDropdown}
-                                className={`flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 focus:outline-none relative py-2 ${window.location.pathname.includes('/shop')
+                                className={`flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300 focus:outline-none relative py-2 ${pathname?.includes('/shop')
                                     ? "text-white"
                                     : 'text-white/80 hover:text-white'
                                     }`}
@@ -324,7 +331,7 @@ const Navbar = () => {
                         <button
                             onClick={toggleShopDropdown}
                             aria-expanded={isShopDropdownOpen}
-                            className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none ${window.location.pathname.includes('/shop') ? 'text-white bg-white/20' : 'text-white hover:text-white/90 hover:bg-white/10'}`}
+                            className={`w-full flex items-center justify-between px-3 py-2 rounded-md text-base font-medium transition-colors focus:outline-none ${pathname?.includes('/shop') ? 'text-white bg-white/20' : 'text-white hover:text-white/90 hover:bg-white/10'}`}
                         > Shop <ChevronDown size={16} className={`transform transition-transform duration-300 ${isShopDropdownOpen ? 'rotate-180' : ''}`} />
                         </button>
                         <div className={`pl-6 space-y-1 transition-all duration-300 overflow-hidden ${isShopDropdownOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
