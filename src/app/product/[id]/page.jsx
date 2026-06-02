@@ -6,7 +6,7 @@ export async function generateMetadata({ params }) {
 	let description = 'Product details, specifications, and purchasing options at Innovation Dynamics.';
 
 	try {
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'}/api/products/${id}`);
+		const res = await fetch(`/api/products/${id}`);
 		if (res.ok) {
 			const p = await res.json();
 			title = `${p.title || p.name || `Product ${id}`} • Innovation Dynamics`;
