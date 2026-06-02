@@ -6,6 +6,9 @@ export const metadata = {
   title: 'Innovation Dynamics Group | Printers & Office Supplies',
   description: 'Shop home printers, office printers, laser printers, inkjet printers, and ink & toner at Innovation Dynamics Group.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://innovationdynamicsgroup.com'),
+  icons: {
+    icon: '/vite.png',
+  },
 };
 
 export default function RootLayout({ children }) {
