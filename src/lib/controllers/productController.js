@@ -252,6 +252,8 @@ const createProduct = asyncHandler(async (req, res) => {
             technology, usageCategory, allInOneType, wireless, mainFunction
         } = req.body;
 
+        const wirelessValue = typeof wireless === 'string' ? wireless.trim() : wireless;
+
         // Parse all array fields from form-data
         const parseArrayField = (field) => {
             if (!field) return [];
@@ -309,7 +311,7 @@ const createProduct = asyncHandler(async (req, res) => {
             technology: parseArrayField(technology),
             usageCategory: parseArrayField(usageCategory),
             allInOneType: parseArrayField(allInOneType),
-            wireless,
+            wireless: wirelessValue || undefined,
             mainFunction: parseArrayField(mainFunction)
         });
 
@@ -337,6 +339,8 @@ const updateProduct = asyncHandler(async (req, res) => {
         color, width, height, depth, screenSize, reviews,
         technology, usageCategory, allInOneType, wireless, mainFunction
     } = req.body;
+
+    const wirelessValue = typeof wireless === 'string' ? wireless.trim() : wireless;
 
     // Parse all array fields from form-data
     const parseArrayField = (field) => {
@@ -377,7 +381,7 @@ const updateProduct = asyncHandler(async (req, res) => {
         product.technology = technology ? parseArrayField(technology) : product.technology;
         product.usageCategory = usageCategory ? parseArrayField(usageCategory) : product.usageCategory;
         product.allInOneType = allInOneType ? parseArrayField(allInOneType) : product.allInOneType;
-        product.wireless = wireless ?? product.wireless;
+        product.wireless = (wirelessValue !== '' && wirelessValue !== undefined) ? wirelessValue : product.wireless;
         product.mainFunction = mainFunction ? parseArrayField(mainFunction) : product.mainFunction;
 
         // Image Update Logic

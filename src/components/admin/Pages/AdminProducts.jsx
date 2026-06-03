@@ -333,6 +333,10 @@ const AdminProducts = () => {
             } else if (ARRAY_FORM_FIELDS.includes(key)) {
                 // Serialize arrays as JSON strings so the backend parseArrayField() can decode them
                 data.append(key, JSON.stringify(Array.isArray(formData[key]) ? formData[key] : []));
+            } else if (key === 'wireless') {
+                if (formData.wireless !== '') {
+                    data.append('wireless', formData.wireless);
+                }
             } else {
                 data.append(key, formData[key]);
             }

@@ -290,11 +290,6 @@ const ProductDetails = () => {
                                                     >+</button>
                                                 </div>
                                             </div>
-                                            <div className="pt-5">
-                                                <span className="text-xs text-gray-400">
-                                                    {product.countInStock} available
-                                                </span>
-                                            </div>
                                         </div>
 
                                         {/* Buttons */}
