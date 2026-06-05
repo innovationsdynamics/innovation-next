@@ -75,6 +75,7 @@ export default function RootLayout({ children }) {
         <AppProviders>
           <SiteShell>{children}</SiteShell>
         </AppProviders>
+        <script src="//code.jivosite.com/widget/XjQJxqMY0d" async />
       </body>
     </html>
   );
