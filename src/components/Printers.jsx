@@ -127,7 +127,7 @@ const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetai
     const brandParam = searchParams.get('brand') || '';
 
     const productList = useSelector(s => s.productList || {});
-    const { loading, error, products = [], pages = 1, page = 1 } = productList;
+    const { loading, error, products = [], pages = 1, page = 1, total = 0 } = productList;
 
     useEffect(() => { setSearch(initialSearch); }, [initialSearch]);
     useEffect(() => { const t = setTimeout(() => setDeb(search), 400); return () => clearTimeout(t); }, [search]);
@@ -232,7 +232,7 @@ const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetai
             <div className="flex items-center gap-4 mb-8">
                 <div className="h-0.5 flex-grow bg-gray-100"></div>
                 <p className="text-gray-600 text-xs font-medium whitespace-nowrap">
-                    <span className="text-[#024ad8] font-bold">{sorted.length}</span> products found
+                    <span className="text-[#024ad8] font-bold">{total || sorted.length}</span> products found
                 </p>
                 <div className="h-0.5 flex-grow bg-gray-100"></div>
             </div>
@@ -334,7 +334,12 @@ const Printers = ({ hideHero = false }) => {
         { label: 'Ink & Toner',     filterType: 'catName',       filterValue: 'Ink & Toner', bg: '/ink-toner.webp', bgMobile: '/ink-tonerMobile.webp' },
     ];
 
-    const [activeTab, setActiveTab] = useState(NAV_TABS[0]); // Default to Home Printers
+    const pathKey = pathname.replace(/^\//, '').replace(/\/$/, '');
+    const initialTab = filterParam && FILTER_MAP[filterParam]
+        ? FILTER_MAP[filterParam]
+        : (FILTER_MAP[pathKey] || NAV_TABS[0]);
+
+    const [activeTab, setActiveTab] = useState(initialTab);
 
     // Sync activeTab with the ?filter= query param or the pathname (for separate html pages)
     useEffect(() => {

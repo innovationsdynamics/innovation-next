@@ -25,18 +25,21 @@ import {
 export const productListReducer = (state = { products: [] }, action) => {
     switch (action.type) {
         case PRODUCT_LIST_REQUEST:
-            // Keep existing products/page/pages while loading to prevent UI flicker
-            return { ...state, loading: true };
+            // Reset stale list state when a new product request starts
+            return { loading: true, products: [], page: 1, pages: 1, total: 0 };
         case PRODUCT_LIST_SUCCESS: {
             const isArray = Array.isArray(action.payload);
             const products = isArray ? action.payload : action.payload.products;
-            
+            const totalCount = isArray
+                ? products.length
+                : Number(action.payload.totalAll ?? action.payload.total);
+
             return {
                 loading: false,
-                products: products, 
+                products: products,
                 page: isArray ? 1 : Number(action.payload.page),
                 pages: isArray ? 1 : Number(action.payload.pages),
-                total: isArray ? products.length : Number(action.payload.total)
+                total: totalCount
             };
         }
         case PRODUCT_LIST_FAIL:
