@@ -126,10 +126,6 @@ const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetai
     const pageParam = Number(searchParams.get('page')) || 1;
     const brandParam = searchParams.get('brand') || '';
 
-    const pushFilterUpdate = (href) => {
-        router.push(href, { scroll: false });
-    };
-
     const productList = useSelector(s => s.productList || {});
     const { loading, error, products = [], pages = 1, page = 1, total = 0 } = productList;
 
@@ -222,7 +218,7 @@ const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetai
                             const params = new URLSearchParams(searchParams.toString());
                             if (newBrand) params.set('brand', newBrand); else params.delete('brand');
                             params.set('page', '1');
-                            pushFilterUpdate(`${pathname}?${params.toString()}`);
+                            router.push(`${pathname}?${params.toString()}`, { scroll: false });
                         }}
                         className={`px-4 py-1.5 text-[9px] font-bold uppercase tracking-widest border transition-all ${
                             selectedBrand === brand
