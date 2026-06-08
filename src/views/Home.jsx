@@ -19,7 +19,7 @@ const Home = () => {
             <CorporateAccountability />
             <HomeCategories />
             <WhoWeServe />
-            <Printers hideHero={true} />
+            <Printers hideHero={true} forceHomeRoute={true} />
 
             <WhyChooseUs />
             <TrustSection />

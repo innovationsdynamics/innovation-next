@@ -114,7 +114,7 @@ const CategorySection = ({ products = [], loading = false, sectionLabel, onViewA
 };
 
 // ── Filtered View (full paginated listing with search & sort) ─────────────────
-const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetails }) => {
+const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetails, forceHomeRoute = false }) => {
     const dispatch = useDispatch();
     const [search, setSearch] = useState(initialSearch);
     const [debounced, setDeb] = useState(initialSearch);
@@ -134,7 +134,7 @@ const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetai
     useEffect(() => { if (brandParam !== selectedBrand) setSelectedBrand(brandParam); }, [brandParam]);
     useEffect(() => {
         const cleanPath = pathname.replace(/\/$/, '');
-        const isHomePrintersRoute = cleanPath === '/home-printers';
+        const isHomePrintersRoute = (forceHomeRoute || cleanPath === '/home-printers') && !debounced;
         const pageSize = isHomePrintersRoute ? 12 : null;
         const isHomeFirstPage = isHomePrintersRoute && pageParam === 1 && !brandParam;
         const isHomeRemainderPage = isHomePrintersRoute && pageParam > 1 && !brandParam;
@@ -143,7 +143,7 @@ const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetai
         const nonHpPage = isHomeRemainderPage;
 
         dispatch(listProducts(debounced, catName, pageParam, brandToUse, usageCategory, pageSize, countAll, nonHpPage));
-    }, [dispatch, debounced, catName, usageCategory, selectedBrand, pageParam, pathname, brandParam]);
+    }, [dispatch, debounced, catName, usageCategory, selectedBrand, pageParam, pathname, brandParam, forceHomeRoute]);
 
     if (error) {
         return (
@@ -308,7 +308,7 @@ const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetai
 };
 
 // ── Main Printers Page ────────────────────────────────────────────────────────
-const Printers = ({ hideHero = false }) => {
+const Printers = ({ hideHero = false, forceHomeRoute = false }) => {
     const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
@@ -463,12 +463,14 @@ const Printers = ({ hideHero = false }) => {
                         initialSearch={globalSearch}
                         usageCategory=""
                         onDetails={handleDetails}
+                        forceHomeRoute={forceHomeRoute}
                     />
                 ) : (
                     <FilteredView
                         catName={activeCatName}
                         usageCategory={activeUsageCat}
                         onDetails={handleDetails}
+                        forceHomeRoute={forceHomeRoute}
                     />
                 )}
             </div>
