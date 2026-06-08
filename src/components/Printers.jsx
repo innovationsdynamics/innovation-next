@@ -136,11 +136,13 @@ const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetai
         const cleanPath = pathname.replace(/\/$/, '');
         const isHomePrintersRoute = cleanPath === '/home-printers';
         const pageSize = isHomePrintersRoute ? 12 : null;
-        const forceHpFirstPage = isHomePrintersRoute && pageParam === 1 && !brandParam;
-        const brandToUse = forceHpFirstPage ? 'HP' : selectedBrand;
-        const countAll = forceHpFirstPage;
+        const isHomeFirstPage = isHomePrintersRoute && pageParam === 1 && !brandParam;
+        const isHomeRemainderPage = isHomePrintersRoute && pageParam > 1 && !brandParam;
+        const brandToUse = isHomeFirstPage ? 'HP' : selectedBrand;
+        const countAll = isHomeFirstPage;
+        const nonHpPage = isHomeRemainderPage;
 
-        dispatch(listProducts(debounced, catName, pageParam, brandToUse, usageCategory, pageSize, countAll));
+        dispatch(listProducts(debounced, catName, pageParam, brandToUse, usageCategory, pageSize, countAll, nonHpPage));
     }, [dispatch, debounced, catName, usageCategory, selectedBrand, pageParam, pathname, brandParam]);
 
     if (error) {

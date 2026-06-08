@@ -26,7 +26,7 @@ import {
     PRODUCT_DELETE_REVIEW_FAIL,
 } from '../constants/productConstants';
 
-export const listProducts = (search = '', category = '', pageNumber = 1, brand = '', usageCategory = '', pageSize = null, countAll = false) => async (dispatch) => {
+export const listProducts = (search = '', category = '', pageNumber = 1, brand = '', usageCategory = '', pageSize = null, countAll = false, nonHpPage = false) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST });
 
@@ -42,6 +42,9 @@ export const listProducts = (search = '', category = '', pageNumber = 1, brand =
         }
         if (countAll) {
             url += `&countAll=true`;
+        }
+        if (nonHpPage) {
+            url += `&nonHpPage=true`;
         }
         if (brand && brand !== 'all') {
             url += `&brand=${brandParam}`;
