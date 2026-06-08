@@ -133,8 +133,15 @@ const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetai
     useEffect(() => { const t = setTimeout(() => setDeb(search), 400); return () => clearTimeout(t); }, [search]);
     useEffect(() => { if (brandParam !== selectedBrand) setSelectedBrand(brandParam); }, [brandParam]);
     useEffect(() => {
-        dispatch(listProducts(debounced, catName, pageParam, selectedBrand, usageCategory));
-    }, [dispatch, debounced, catName, usageCategory, selectedBrand, pageParam]);
+        const cleanPath = pathname.replace(/\/$/, '');
+        const isHomePrintersRoute = cleanPath === '/home-printers';
+        const pageSize = isHomePrintersRoute ? 12 : null;
+        const forceHpFirstPage = isHomePrintersRoute && pageParam === 1 && !brandParam;
+        const brandToUse = forceHpFirstPage ? 'HP' : selectedBrand;
+        const countAll = forceHpFirstPage;
+
+        dispatch(listProducts(debounced, catName, pageParam, brandToUse, usageCategory, pageSize, countAll));
+    }, [dispatch, debounced, catName, usageCategory, selectedBrand, pageParam, pathname, brandParam]);
 
     if (error) {
         return (

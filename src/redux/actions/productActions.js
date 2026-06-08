@@ -26,7 +26,7 @@ import {
     PRODUCT_DELETE_REVIEW_FAIL,
 } from '../constants/productConstants';
 
-export const listProducts = (search = '', category = '', pageNumber = 1, brand = '', usageCategory = '') => async (dispatch) => {
+export const listProducts = (search = '', category = '', pageNumber = 1, brand = '', usageCategory = '', pageSize = null, countAll = false) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST });
 
@@ -37,6 +37,12 @@ export const listProducts = (search = '', category = '', pageNumber = 1, brand =
         const usageCategoryParam = encodeURIComponent(usageCategory);
 
         let url = `/api/products?search=${searchParam}&category=${categoryParam}&page=${pageNumber}`;
+        if (pageSize) {
+            url += `&limit=${pageSize}`;
+        }
+        if (countAll) {
+            url += `&countAll=true`;
+        }
         if (brand && brand !== 'all') {
             url += `&brand=${brandParam}`;
         }

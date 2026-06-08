@@ -169,15 +169,23 @@ const getProducts = asyncHandler(async (req, res) => {
 
     const pageSize = Number(req.query.limit) || 20;
     const page = Number(req.query.page) || 1;
+    const countAll = req.query.countAll === 'true';
 
     const count = await Product.countDocuments(query);
+    let totalCountForPages = count;
+    if (countAll) {
+        const totalQuery = { ...query };
+        delete totalQuery.brand;
+        totalCountForPages = await Product.countDocuments(totalQuery);
+    }
+
     const products = await Product.find(query)
         .populate('category', 'name')
         .sort(sortOption)
         .limit(pageSize)
         .skip(pageSize * (page - 1));
 
-    res.json({ products, page, pages: Math.ceil(count / pageSize), total: count });
+    res.json({ products, page, pages: Math.ceil(totalCountForPages / pageSize), total: count, totalAll: countAll ? totalCountForPages : undefined });
 });
 
 // @desc    Fetch single product
