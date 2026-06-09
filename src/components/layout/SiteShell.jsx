@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
-import CookieConsent from '@/components/common/CookieConsent';
+// import CookieConsent from '@/components/common/CookieConsent';
 
 export default function SiteShell({ children }) {
   const pathname = usePathname();
@@ -20,7 +20,7 @@ export default function SiteShell({ children }) {
       <main className="flex-grow">{children}</main>
       <Footer />
       <ScrollToTop />
-      <CookieConsent />
+      {/* <CookieConsent /> */}
     </div>
   );
 }
