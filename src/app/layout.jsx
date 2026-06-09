@@ -16,6 +16,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <script src="https://checkout.clover.com/sdk.js" async />
+        {/* Start cookieyes banner */}
+        <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/68a4eba7185799beef283c36230726e7/script.js" />
+        {/* End cookieyes banner */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -27,7 +30,7 @@ export default function RootLayout({ children }) {
                 'Independent U.S. online retailer specializing in home printers, office printers, laser printers, inkjet printers, and ink & toner supplies.',
               url: 'https://innovationdynamicsgroup.com',
               logo: 'https://innovationdynamicsgroup.com/idg-logo.png',
-              telephone: '+1-651-815-4630',
+              telephone: '+1-612-445-9132',
               email: 'support@innovationdynamicsgroup.com',
               address: {
                 '@type': 'PostalAddress',

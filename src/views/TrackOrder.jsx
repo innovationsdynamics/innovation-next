@@ -173,7 +173,7 @@ const TrackOrder = () => {
                             </div>
                             <div className="space-y-2">
                                 <h3 className="font-bold text-[#024ad8] uppercase text-xs tracking-wider">Direct Contact</h3>
-                                <p className="text-sm font-bold text-black">+1 (651) 815-4630</p>
+                                <p className="text-sm font-bold text-black">+1-612-445-9132</p>
                                 <p className="text-sm font-bold text-black break-all">support@innovationdynamicsgroup.com</p>
                             </div>
                         </div>

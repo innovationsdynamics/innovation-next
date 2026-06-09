@@ -169,7 +169,7 @@ const Footer = () => {
                 <div className="flex items-center gap-3 group">
                   <Phone size={16} className="text-[#024ad8] shrink-0" />
                   <span className="text-sm font-bold text-neutral-400 group-hover:text-white transition-colors">
-                    +1 (651) 815-4630
+                    +1-612-445-9132
                   </span>
                 </div>
               </div>

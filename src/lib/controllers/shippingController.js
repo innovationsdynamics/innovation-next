@@ -35,7 +35,7 @@ const getShippingRates = asyncHandler(async (req, res) => {
         state: process.env.COMPANY_STATE || 'NY',
         zip: process.env.COMPANY_ZIP || '10001',
         country: process.env.COMPANY_COUNTRY || 'US',
-        phone: process.env.COMPANY_PHONE || '123-456-7890'
+        phone: process.env.COMPANY_PHONE || '+1-612-445-9132'
     });
 
     // Customer Address

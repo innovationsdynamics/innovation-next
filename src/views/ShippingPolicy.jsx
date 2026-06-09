@@ -182,7 +182,7 @@ const ShippingPolicy = () => {
                         <div className="mt-4 space-y-2">
                             <p className="font-bold text-black">Innovation Dynamics Group LLC</p>
                             <p>📧 Email: support@innovationdynamicsgroup.com</p>
-                            <p>📞 Phone: +1 (651) 815-4630</p>
+                            <p>📞 Phone: +1-612-445-9132</p>
                             <p>📍 Registered Address:<br/>11397 Quincy St NE<br/>Blaine, MN 55434<br/>United States</p>
                         </div>
                         <p className="mt-6">We are committed to responding promptly and assisting you with all shipping-related concerns.</p>

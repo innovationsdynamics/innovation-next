@@ -39,7 +39,7 @@ const HomeContact = () => {
                                     </div>
                                     <div>
                                         <p className="text-[10px] text-neutral-300 font-extrabold uppercase tracking-wider mb-1">Phone</p>
-                                        <p className="text-sm font-semibold text-white">+1 (651) 815-4630</p>
+                                        <p className="text-sm font-semibold text-white">+1-612-445-9132</p>
                                     </div>
                                 </div>
 

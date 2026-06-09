@@ -68,7 +68,7 @@ const FAQs = () => {
         },
         {
             question: "15. How can I contact customer support?",
-            answer: "You can reach Innovation Dynamics Group LLC via email at support@innovationdynamicsgroup.com or call +1 (651) 815-4630. Our location is 11397 Quincy St NE, Blaine, MN 55434."
+            answer: "You can reach Innovation Dynamics Group LLC via email at support@innovationdynamicsgroup.com or call +1-612-445-9132. Our location is 11397 Quincy St NE, Blaine, MN 55434."
         }
     ];
 
@@ -140,7 +140,7 @@ const FAQs = () => {
                             <div className="space-y-1">
                                 <p className="text-xs font-bold text-[#024ad8] uppercase tracking-wider">Support Channel</p>
                                 <p className="text-sm font-bold text-black break-all">support@innovationdynamicsgroup.com</p>
-                                <p className="text-sm font-bold text-black">+1 (651) 815-4630</p>
+                                <p className="text-sm font-bold text-black">+1-612-445-9132</p>
                             </div>
                             <div className="space-y-1">
                                 <p className="text-xs font-bold text-[#024ad8] uppercase tracking-wider">Business Center</p>

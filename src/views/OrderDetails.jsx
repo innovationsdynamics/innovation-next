@@ -122,7 +122,7 @@ const OrderDetails = () => {
             </div>
 
             <div class="footer">
-                <p>Thank you for your purchase! For support, contact support@innovationdynamicsgroup.com or call +1 (651) 815-4630</p>
+                <p>Thank you for your purchase! For support, contact support@innovationdynamicsgroup.com or call +1-612-445-9132</p>
                 <p style="margin-top:6px">Innovation Dynamics Group LLC &bull; HP Amplify Partner &bull; All trademarks belong to their respective owners.</p>
             </div>
 

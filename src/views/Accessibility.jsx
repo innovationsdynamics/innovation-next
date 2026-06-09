@@ -57,7 +57,7 @@ const Accessibility = () => {
                         <div className="mt-4 space-y-2">
                             <p className="font-bold text-black">Innovation Dynamics Group LLC</p>
                             <p>📧 Email: support@innovationdynamicsgroup.com</p>
-                            <p>📞 Phone: +1 (651) 815-4630</p>
+                            <p>📞 Phone: +1-612-445-9132</p>
                             <p>📍 Address: 11397 Quincy St NE, Blaine, MN 55434, United States</p>
                         </div>
                     </div>

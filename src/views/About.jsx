@@ -319,7 +319,7 @@ const About = () => {
                                     </div>
                                     <div>
                                         <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">Contact</p>
-                                        <p className="text-sm font-bold text-black">+1 (651) 815-4630</p>
+                                        <p className="text-sm font-bold text-black">+1-612-445-9132</p>
                                     </div>
                                 </div>
                             </div>

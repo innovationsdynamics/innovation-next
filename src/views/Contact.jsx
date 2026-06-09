@@ -210,7 +210,7 @@ const Contact = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-xs font-semibold text-[#024ad8] uppercase tracking-wider mb-1.5">Phone</h3>
-                                    <p className="text-base font-semibold text-black">+1 (651) 815-4630</p>
+                                    <p className="text-base font-semibold text-black">+1-612-445-9132</p>
                                     <p className="text-xs text-gray-400 font-medium mt-1">Available during business hours</p>
                                 </div>
                             </div>

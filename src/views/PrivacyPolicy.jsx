@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
                         <ul className="list-none space-y-1">
                             <li><strong>Innovation Dynamics Group LLC</strong></li>
                             <li>📧 Email: support@innovationdynamicsgroup.com</li>
-                            <li>📞 Phone: +1 (651) 815-4630</li>
+                            <li>📞 Phone: +1-612-445-9132</li>
                             <li>📍 Address: 11397 Quincy St NE, Blaine, MN 55434, United States</li>
                         </ul>
                     </div>
@@ -230,7 +230,7 @@ const PrivacyPolicy = () => {
                         <div className="mt-4 space-y-2">
                             <p className="font-bold text-black">Innovation Dynamics Group LLC</p>
                             <p>📧 Email: support@innovationdynamicsgroup.com</p>
-                            <p>📞 Phone: +1 (651) 815-4630</p>
+                            <p>📞 Phone: +1-612-445-9132</p>
                             <p>📍 Address: 11397 Quincy St NE, Blaine, MN 55434, United States</p>
                         </div>
                         <p className="mt-6">We are committed to responding promptly and handling all privacy-related requests in accordance with applicable data protection laws.</p>
