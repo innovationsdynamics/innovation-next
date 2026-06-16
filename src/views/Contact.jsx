@@ -283,6 +283,94 @@ const Contact = () => {
                 </div>
             </div>
 
+{/* Faq based on contact us  */}
+           {/* Contact FAQ */}
+
+<section className="py-16 sm:py-24 bg-[#F8F9FA] border-t border-gray-100">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Header */}
+    <div className="text-center mb-10 sm:mb-16 max-w-3xl mx-auto">
+      <span className="text-[11px] font-black uppercase tracking-[0.3em] text-[#024ad8] mb-4 block">
+        Quick Answers
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-6 leading-tight uppercase">
+        Frequently Asked Questions
+      </h2>
+
+      <div className="w-16 h-1 bg-[#024ad8] mx-auto mb-6"></div>
+
+      <p className="text-gray-500 font-medium text-base sm:text-lg leading-relaxed">
+        Find answers to common questions about contacting our team and
+        receiving support.
+      </p>
+    </div>
+
+    {/* FAQ Cards */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      {[
+        {
+          title: "How Can I Contact Support?",
+          description:
+            "You can reach our support team by phone or email during normal business hours. We aim to respond as quickly as possible to all inquiries.",
+        },
+        {
+          title: "When Will I Receive A Response?",
+          description:
+            "Most inquiries receive a response within one business day. Response times may vary depending on the nature and volume of requests.",
+        },
+        {
+          title: "What Types Of Questions Can You Help With?",
+          description:
+            "Our team can assist with general inquiries, website-related questions, available resources, and other support requests.",
+        },
+        {
+          title: "Do You Offer Assistance By Email?",
+          description:
+            "Yes. Email support is available for users who prefer written communication and detailed responses to their questions.",
+        },
+        {
+          title: "What Are Your Business Hours?",
+          description:
+            "Support is available Monday through Friday from 9:00 AM to 5:00 PM CST, excluding major holidays and special closures.",
+        },
+        {
+          title: "Where Is Your Company Located?",
+          description:
+            "Innovation Dynamics Group LLC is located in Blaine, Minnesota, United States, and serves customers through online support channels.",
+        },
+      ].map((faq, index) => (
+        <div
+          key={index}
+          className="bg-white p-8 rounded-sm shadow-sm border border-gray-100 hover:shadow-lg hover:border-[#024ad8]/20 transition-all duration-500"
+        >
+          <div className="w-12 h-12 mb-5 bg-[#024ad8]/10 flex items-center justify-center rounded-sm">
+            <span className="text-[#024ad8] font-black text-lg">
+              {index + 1}
+            </span>
+          </div>
+
+          <h3 className="text-sm font-bold text-black mb-3 uppercase tracking-tight">
+            {faq.title}
+          </h3>
+
+          <p className="text-gray-500 text-[13px] leading-relaxed font-medium">
+            {faq.description}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    {/* Bottom Text */}
+    <div className="text-center mt-12">
+      <p className="text-sm text-gray-700 font-bold uppercase tracking-widest bg-white inline-block px-8 py-4 border border-gray-100 rounded-sm">
+        We're Here To Help
+      </p>
+    </div>
+  </div>
+</section>
+
             {/* Bottom Section */}
             <div className="py-16 text-center bg-[#F8F9FA] border-t border-gray-100">
                 <div className="max-w-3xl mx-auto px-4">

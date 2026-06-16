@@ -10,6 +10,10 @@ import WhoWeServe from '../components/home/WhoWeServe';
 import TrustSection from '../components/home/TrustSection';
 import CallToAction from '../components/home/CallToAction';
 import HomeContact from '../components/home/HomeContact';
+import SolutionsForEveryNeed from '@/components/home/SolutionsForEveryNeed';
+import BuyingAdvice from '@/components/home/BuyingAdvice';
+import HowItWork from '@/components/home/HowItWork';
+import FAQHome from '@/components/home/FAQHome';
 
 const Home = () => {
     return (
@@ -20,12 +24,15 @@ const Home = () => {
             <HomeCategories />
             <WhoWeServe />
             <Printers hideHero={true} forceHomeRoute={true} />
-
+            <SolutionsForEveryNeed />
             <WhyChooseUs />
+            <HowItWork />
+            <BuyingAdvice />
             <TrustSection />
             <CustomerReviews />
             <CallToAction />
-            <HomeContact />
+            <FAQHome />
+             <HomeContact />
         </div>
     );
 };

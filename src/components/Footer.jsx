@@ -101,9 +101,9 @@ const Footer = () => {
               <ul className="space-y-3">
                 {[
                   { name: "Track Order", link: "/track-order/" },
-                  { name: "Shipping Policy", link: "/shipping-policy/" },
-                  { name: "Return & Exchange", link: "/return-exchange/" },
-                  { name: "Refund & Return Policy", link: "/refund-policy/" },
+                  // { name: "Shipping Policy", link: "/shipping-policy/" },
+                  // { name: "Return & Exchange", link: "/return-exchange/" },
+                  { name: "Shipping & Return", link: "/refund-policy/" },
                   { name: "Buying Guide", link: "/buying-guide/" },
                   { name: "Support Hub", link: "/resources/" },
                 ].map((item) => (
@@ -128,7 +128,7 @@ const Footer = () => {
                   { name: "Privacy Policy", link: "/privacy-policy/" },
                   { name: "Terms & Conditions", link: "/terms-conditions/" },
                   { name: "Cookie Policy", link: "/cookie-policy/" },
-                  { name: "Accessibility", link: "/accessibility/" },
+                  // { name: "Accessibility", link: "/accessibility/" },
                   { name: "Disclaimer", link: "/disclaimer/" },
                   { name: "Do Not Sell My Info", link: "/do-not-sell/" },
                 ].map((item) => (

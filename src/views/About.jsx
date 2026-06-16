@@ -229,6 +229,107 @@ const About = () => {
                 </div>
             </section>
 
+
+            {/* Our mission  */}
+
+            {/* Our Mission */}
+
+            <section className="py-16 sm:py-24 bg-[#F8F9FA] border-t border-gray-100 overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+                        {/* Left Content */}
+                        <div>
+                            <span className="text-[11px] font-black uppercase tracking-[0.3em] text-[#024ad8] mb-4 block">
+                                Our Commitment
+                            </span>
+
+                            <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-6 leading-tight uppercase">
+                                Delivering Reliable Technology Resources
+                            </h2>
+
+                            <div className="w-16 h-1 bg-[#024ad8] mb-8"></div>
+
+                            <div className="space-y-6 text-gray-600 font-medium leading-relaxed">
+                                <p>
+                                    At Innovation Dynamics Group LLC, our focus is on making technology
+                                    information more accessible, understandable, and practical for
+                                    everyday users. We believe people should be able to find clear
+                                    guidance without navigating through unnecessary complexity or
+                                    confusing technical language.
+                                </p>
+
+                                <p>
+                                    Our platform is built around educational resources, step-by-step
+                                    instructions, and carefully organized information designed to help
+                                    users make informed decisions. Whether you're setting up a device,
+                                    exploring compatibility requirements, or researching available
+                                    options, our goal is to simplify the process.
+                                </p>
+
+                                <p>
+                                    We continuously improve our content to ensure it remains relevant,
+                                    easy to follow, and useful for both new and experienced users. By
+                                    prioritizing clarity, consistency, and transparency, we strive to
+                                    create a better experience for everyone who relies on our resources.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Right Card */}
+                        <div className="bg-white border border-gray-100 rounded-sm shadow-sm p-8 lg:p-10">
+                            <h3 className="text-2xl font-extrabold text-black mb-8 uppercase tracking-tight">
+                                What We Stand For
+                            </h3>
+
+                            <div className="space-y-5">
+                                {[
+                                    "Clear and easy-to-follow information",
+                                    "Reliable educational resources",
+                                    "Transparency in every recommendation",
+                                    "User-focused content and guidance",
+                                    "Consistent quality standards",
+                                    "Continuous platform improvements",
+                                ].map((item, index) => (
+                                    <div
+                                        key={index}
+                                        className="flex items-start gap-4"
+                                    >
+                                        <div className="w-8 h-8 rounded-full bg-[#024ad8]/10 flex items-center justify-center flex-shrink-0">
+                                            <svg
+                                                className="w-4 h-4 text-[#024ad8]"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                                strokeWidth="3"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    d="M5 13l4 4L19 7"
+                                                />
+                                            </svg>
+                                        </div>
+
+                                        <p className="text-sm font-medium text-gray-700 leading-relaxed">
+                                            {item}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="mt-8 pt-8 border-t border-gray-100">
+                                <p className="text-[13px] text-gray-500 font-medium leading-relaxed">
+                                    Our objective is simple: provide dependable information that helps
+                                    users navigate technology-related decisions with greater confidence
+                                    and clarity.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* ── Section: How We Work (Process) ─────────────────────────── */}
             <section className="py-24 bg-black text-white overflow-hidden relative">
                 <div className="absolute top-0 right-0 p-10 opacity-5">
@@ -291,7 +392,133 @@ const About = () => {
                 </div>
             </section>
 
-            {/* ── Section: Business Information ─────────────────────────── */}
+            {/* Our team  */}
+
+           
+
+            <section className="py-16 sm:py-24 bg-[#F8F9FA] border-t border-gray-100">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+                        {/* Left Content */}
+                        <div>
+                            <span className="text-[11px] font-black uppercase tracking-[0.3em] text-[#024ad8] mb-4 block">
+                                Customer Support
+                            </span>
+
+                            <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-6 leading-tight uppercase">
+                                Here When You Need Assistance
+                            </h2>
+
+                            <div className="w-16 h-1 bg-[#024ad8] mb-8"></div>
+
+                            <div className="space-y-6 text-gray-600 font-medium leading-relaxed">
+                                <p>
+                                    At Innovation Dynamics Group LLC, we are committed to providing a
+                                    reliable and responsive experience for every visitor. Whether you
+                                    have questions about our services, need clarification on available
+                                    resources, or require assistance with general inquiries, our support
+                                    team is ready to help.
+                                </p>
+
+                                <p>
+                                    We believe that effective communication is an essential part of
+                                    delivering a positive customer experience. Our goal is to provide
+                                    timely responses, clear information, and practical guidance that
+                                    helps users find the answers they need quickly and efficiently.
+                                </p>
+
+                                <p>
+                                    From general support requests to detailed questions, we strive to
+                                    maintain a professional and customer-focused approach. Every inquiry
+                                    is handled with care and attention because your satisfaction remains
+                                    an important part of our commitment.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Contact Card */}
+                        <div className="bg-white border border-gray-100 rounded-sm shadow-sm p-8 lg:p-10">
+                            <h3 className="text-2xl font-extrabold text-black mb-8 uppercase tracking-tight">
+                                Contact Information
+                            </h3>
+
+                            <div className="space-y-8">
+                                {/* Address */}
+                                <div>
+                                    <h4 className="text-sm font-black uppercase text-black mb-3">
+                                        Address
+                                    </h4>
+
+                                    <p className="text-sm text-gray-600 font-medium leading-relaxed">
+                                        11397 Quincy St NE
+                                        <br />
+                                        Blaine, MN 55434, USA
+                                    </p>
+                                </div>
+
+                                <div className="border-t border-gray-100 pt-6">
+                                    <h4 className="text-sm font-black uppercase text-black mb-3">
+                                        Contact
+                                    </h4>
+
+                                    <p className="text-sm text-gray-600 font-medium">
+                                        +1-612-445-9132
+                                    </p>
+                                </div>
+
+                                <div className="border-t border-gray-100 pt-6">
+                                    <h4 className="text-sm font-black uppercase text-black mb-3">
+                                        Email
+                                    </h4>
+
+                                    <p className="text-sm text-gray-600 font-medium break-all">
+                                        support@innovationdynamicsgroup.com
+                                    </p>
+                                </div>
+
+                                <div className="border-t border-gray-100 pt-6">
+                                    <h4 className="text-sm font-black uppercase text-black mb-4">
+                                        Support Hours
+                                    </h4>
+
+                                    <div className="flex items-center justify-between text-sm">
+                                        <span className="font-medium text-gray-600">
+                                            Monday – Friday
+                                        </span>
+
+                                        <span className="font-bold text-black">
+                                            9 AM – 5 PM CST
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="mt-8 pt-8 border-t border-gray-100">
+                                <p className="text-[13px] text-gray-500 font-medium leading-relaxed">
+                                    We aim to respond to inquiries as quickly as possible during normal
+                                    business hours and appreciate the opportunity to assist you.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        
+
+            {/* ── Final CTA ──────────────────────────────────────────────── */}
+            <section className="py-24 bg-white border-t border-gray-100">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 className="text-3xl font-shadow-lg font-black uppercase mb-8">Focusing on clarity so you can focus on clarity.</h2>
+                    <Link href="/shop" className="inline-flex items-center gap-10 px-12 py-5 bg-[#024ad8] text-white font-black rounded-sm hover:bg-black transition-all shadow-2xl hover:-translate-y-1">
+                        VIEW OUR FOCUSED CATALOG <ArrowRight size={20} />
+                    </Link>
+                </div>
+            </section>
+
+
+                {/* ── Section: Business Information ─────────────────────────── */}
             <section className="py-24 bg-[#F8F9FA] border-t border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="bg-white rounded-sm shadow-xl border border-gray-100 overflow-hidden">
@@ -345,16 +572,6 @@ const About = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-
-            {/* ── Final CTA ──────────────────────────────────────────────── */}
-            <section className="py-24 bg-white border-t border-gray-100">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-3xl font-shadow-lg font-black uppercase mb-8">Focusing on clarity so you can focus on clarity.</h2>
-                    <Link href="/shop" className="inline-flex items-center gap-10 px-12 py-5 bg-[#024ad8] text-white font-black rounded-sm hover:bg-black transition-all shadow-2xl hover:-translate-y-1">
-                        VIEW OUR FOCUSED CATALOG <ArrowRight size={20} />
-                    </Link>
                 </div>
             </section>
         </div>
