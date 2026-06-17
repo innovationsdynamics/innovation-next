@@ -110,7 +110,7 @@ function WarrantySafety() {
           </h1>
 
           <p className="text-sm text-gray-500 mt-3">
-            Last Updated: January 2026
+            Last Updated: June 18, 2026
           </p>
 
           <p className="mt-8 text-lg leading-8 text-gray-600">

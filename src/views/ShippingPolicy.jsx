@@ -8,7 +8,7 @@ const ShippingPolicy = () => {
                 <header className="mb-12 border-b border-gray-100 pb-8 text-left">
                     <h1 className="text-4xl font-bold text-black mb-4">Shipping Policy</h1>
                     <div className="flex flex-col sm:flex-row gap-6 text-xs text-gray-400 font-medium whitespace-nowrap">
-                        <p>Last Updated: March 25, 2026</p>
+                        <p>Last Updated: June 18, 2026</p>
                     </div>
                 </header>
 

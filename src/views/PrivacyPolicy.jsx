@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
                     {/* <h1 className="text-4xl font-bold text-black mb-2">Your Privacy Matters</h1> */}
                     <h2 className="text-2xl font-semibold text-gray-600 mb-4">Privacy Policy</h2>
                     <div className="flex flex-col sm:flex-row gap-6 text-xs text-gray-400 font-medium whitespace-nowrap">
-                        <p>Last Updated: January 2026</p>
+                        <p>Last Updated: June 18, 2026</p>
                     </div>
                 </header>
 

@@ -8,7 +8,7 @@ function DoNotSell() {
           <h1 className="text-4xl font-bold text-black mb-2">Do Not Sell My Personal Information</h1>
           <p className="text-gray-500 text-sm mb-4">California Consumer Privacy Act (CCPA) Rights</p>
           <div className="flex flex-col sm:flex-row gap-6 text-xs text-gray-400 font-medium whitespace-nowrap">
-            <p>Last Updated: January 2026</p>
+            <p>Last Updated: June 18, 2026</p>
           </div>
         </header>
 
