@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart as addToCartAction, removeFromCart as removeFromCartAction, saveShippingAddress } from '../redux/actions/cartActions';
+import { addToCart as addToCartAction, removeFromCart as removeFromCartAction, updateCartQuantity, saveShippingAddress } from '../redux/actions/cartActions';
 import { useAuth } from './AuthContext';
 
 const ShopContext = createContext();
@@ -42,7 +42,7 @@ export const ShopProvider = ({ children }) => {
 
     const updateQuantity = (productId, quantity) => {
         if (quantity < 1) return;
-        dispatch(addToCartAction(productId, quantity)); // addToCart in smartinkguide updates qty if already exists
+        dispatch(updateCartQuantity(productId, quantity));
     };
 
     const clearCart = () => {
@@ -92,6 +92,7 @@ export const ShopProvider = ({ children }) => {
     // current context item: { _id, title, images, price, quantity, ... }
     const cart = cartItems.map(item => ({
         ...item,
+        id: item.product, // Add 'id' for compatibility with Cart.jsx
         _id: item.product,
         quantity: item.qty,
         images: [item.image]

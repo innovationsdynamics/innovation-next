@@ -27,10 +27,26 @@ const getShippingRates = asyncHandler(async (req, res) => {
     throw new Error('Missing shipping address or cart items');
   }
 
-  // Only allow shipping within the United States
-  if ((shippingAddress.country || 'US').toUpperCase() !== 'US') {
+  // 1. Check country first
+  const country = (shippingAddress.country || 'US').toUpperCase();
+  if (country !== 'US' && country !== 'UNITED STATES') {
     res.status(400);
-    throw new Error('We currently ship only within the United States.');
+    throw new Error('Sorry, we do not currently deliver to your location.');
+  }
+
+  // 2. Calculate subtotal to check if >= $50 (free shipping)
+  const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
+  if (subtotal >= 50) {
+    // Return free shipping instead of calling EasyPost
+    return res.json([
+      {
+        id: 'free-shipping',
+        service: 'Free Shipping',
+        carrier: 'Standard Shipping',
+        rate: 0,
+        est_delivery_days: 'Standard Shipping'
+      }
+    ]);
   }
 
   // Company Address

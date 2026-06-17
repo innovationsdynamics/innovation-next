@@ -1,5 +1,6 @@
 import {
     CART_ADD_ITEM,
+    CART_UPDATE_QTY,
     CART_REMOVE_ITEM,
     CART_SAVE_SHIPPING_ADDRESS,
     CART_SAVE_PAYMENT_METHOD,
@@ -30,6 +31,14 @@ export const cartReducer = (
                     cartItems: [...state.cartItems, item],
                 };
             }
+        case CART_UPDATE_QTY:
+            const { productId, qty } = action.payload;
+            return {
+                ...state,
+                cartItems: state.cartItems.map((x) =>
+                    x.product === productId ? { ...x, qty } : x
+                ),
+            };
         case CART_REMOVE_ITEM:
             return {
                 ...state,

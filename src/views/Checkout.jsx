@@ -36,6 +36,7 @@ const Checkout = () => {
     const [fetchingRates, setFetchingRates] = useState(false);
     const [ratesError, setRatesError] = useState(null);
     const [cardholderName, setCardholderName] = useState(userInfo?.name || '');
+    const [customAlert, setCustomAlert] = useState({ show: false, message: '' });
 
     // Style configuration
     const inputStyle = "w-full px-4 py-3.5 bg-white border border-gray-200 rounded-sm focus:border-[#024ad8] outline-none transition-all text-black placeholder:text-gray-300 font-medium text-sm";
@@ -69,8 +70,8 @@ const Checkout = () => {
             router.push('/cart');
         } else if (!userInfo) {
             router.push('/login?redirect=checkout');
-        } else if (cloverReady && window.Clover) {
-            // Initialize once when SDK is ready, regardless of step
+        } else if (cloverReady && window.Clover && step === 3) { // Only try when we're on step 3
+            // Initialize when SDK is ready and we're on payment step
             setTimeout(() => {
                 const containers = {
                     number: document.getElementById('card-number-container'),
@@ -108,9 +109,9 @@ const Checkout = () => {
                         console.error("Clover initialization error:", err);
                     }
                 }
-            }, 1000);
+            }, 500); // Reduced timeout
         }
-    }, [userInfo, cartItems, router, cloverReady]);
+    }, [userInfo, cartItems, router, cloverReady, step]);
 
     const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
     const taxPrice = 0; // Tax removed per user request
@@ -121,18 +122,26 @@ const Checkout = () => {
 
     const submitShippingHandler = async (e) => {
         e.preventDefault();
+        
+        // 1. Check country first
+        if (country.toUpperCase() !== 'US' && country.toUpperCase() !== 'UNITED STATES') {
+            setCustomAlert({ show: true, message: 'Sorry, we do not currently deliver to your location.' });
+            return;
+        }
+
         dispatch(saveShippingAddress({ address, city, state: province, postalCode, country, phone }));
 
         if (subtotal >= 50) {
+            // Orders >= $50: Free shipping
             setSelectedRate({
                 service: 'Free Shipping',
-                carrier: 'Standard Delivery',
+                carrier: 'Standard Shipping',
                 rate: 0,
-                est_delivery_days: '3-5'
+                est_delivery_days: 'Standard Shipping'
             });
-            setStep(3); // Skip to payment if free
+            setStep(3); // Skip to payment
         } else {
-            // Fetch real rates
+            // Orders < $50: Use EasyPost
             try {
                 setFetchingRates(true);
                 setRatesError(null);
@@ -317,8 +326,16 @@ const Checkout = () => {
                                     <span>Subtotal</span>
                                     <span className="text-black font-semibold">${subtotal.toFixed(2)}</span>
                                 </div>
-                                <div className="flex justify-between text-sm text-gray-500">
-                                    <span>Shipping</span>
+                                <div className="flex justify-between items-center text-sm text-gray-500">
+                                    <div className="flex items-center gap-2">
+                                        <span>Shipping</span>
+                                        {shippingPrice === 0 && (
+                                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold text-green-700 bg-green-100 border border-green-200">
+                                                <Check size={10} className="mr-1" />
+                                                Free Shipping
+                                            </span>
+                                        )}
+                                    </div>
                                     <span className={shippingPrice === 0 ? "text-[#024ad8] font-bold" : "text-black font-semibold"}>
                                         {shippingPrice === 0 ? 'Free' : `$${shippingPrice.toFixed(2)}`}
                                     </span>
@@ -594,6 +611,27 @@ const Checkout = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Custom Alert Popup */}
+            {customAlert.show && (
+                <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 backdrop-blur-sm">
+                    <div className="bg-white rounded-lg shadow-2xl p-8 max-w-md w-full mx-4 transform transition-all scale-100 animate-in fade-in zoom-in duration-200">
+                        <div className="flex flex-col items-center text-center mb-6">
+                            <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-4">
+                                <AlertCircle size={32} className="text-red-600" />
+                            </div>
+                            <h3 className="text-xl font-bold text-black mb-2">Notice</h3>
+                            <p className="text-gray-600">{customAlert.message}</p>
+                        </div>
+                        <button
+                            onClick={() => setCustomAlert({ show: false, message: '' })}
+                            className="w-full bg-black text-white py-4 rounded-lg font-bold text-base hover:bg-[#024ad8] transition-all duration-200"
+                        >
+                            Got it
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

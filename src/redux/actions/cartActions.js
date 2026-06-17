@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {
     CART_ADD_ITEM,
+    CART_UPDATE_QTY,
     CART_REMOVE_ITEM,
     CART_SAVE_SHIPPING_ADDRESS,
     CART_SAVE_PAYMENT_METHOD,
@@ -36,6 +37,15 @@ export const addToCart = (idOrSlug, qty) => async (dispatch, getState) => {
             slug: data.slug,
             qty,
         },
+    });
+
+    localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+};
+
+export const updateCartQuantity = (productId, qty) => (dispatch, getState) => {
+    dispatch({
+        type: CART_UPDATE_QTY,
+        payload: { productId, qty },
     });
 
     localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
