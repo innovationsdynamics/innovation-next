@@ -115,15 +115,15 @@ const Checkout = () => {
     const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
     const taxPrice = 0; // Tax removed per user request
     
-    // Fixed Shipping Rule: Free over $249, otherwise use selected rate or fallback
-    const shippingPrice = subtotal >= 249 ? 0 : (selectedRate ? parseFloat(selectedRate.rate) : 45);
+    // Fixed Shipping Rule: Free over $50, otherwise use selected rate or fallback
+    const shippingPrice = subtotal >= 50 ? 0 : (selectedRate ? parseFloat(selectedRate.rate) : 45);
     const totalPrice = subtotal + shippingPrice;
 
     const submitShippingHandler = async (e) => {
         e.preventDefault();
         dispatch(saveShippingAddress({ address, city, state: province, postalCode, country, phone }));
 
-        if (subtotal >= 249) {
+        if (subtotal >= 50) {
             setSelectedRate({
                 service: 'Free Shipping',
                 carrier: 'Standard Delivery',
@@ -493,10 +493,10 @@ const Checkout = () => {
                                         <h2 className="text-xl font-bold text-black">Payment Details</h2>
                                     </div>
                                     <button
-                                        onClick={() => setStep(subtotal >= 249 ? 1 : 2)}
+                                        onClick={() => setStep(subtotal >= 50 ? 1 : 2)}
                                         className="text-sm text-[#024ad8] hover:text-black font-medium transition-all hover:underline"
                                     >
-                                        Edit {subtotal >= 249 ? 'Address' : 'Shipping'}
+                                        Edit {subtotal >= 50 ? 'Address' : 'Shipping'}
                                     </button>
                                 </div>
 

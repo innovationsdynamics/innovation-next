@@ -14,7 +14,7 @@ const ShippingPolicy = () => {
 
                 <div className="space-y-6 text-gray-700 leading-relaxed font-normal text-sm md:text-base">
                     <p>
-                        At Innovation Dynamics Group LLC, we are committed to providing clear, reliable, and transparent shipping services across the United States and Canada. This Shipping Policy outlines how orders are processed, shipped, and delivered.
+                        At Innovation Dynamics Group LLC, we are committed to providing clear, reliable, and transparent shipping services throughout the United States. This Shipping Policy outlines how orders are processed, shipped, and delivered.
                     </p>
 
                     <div>
@@ -36,7 +36,7 @@ const ShippingPolicy = () => {
                         <p>We currently ship to:</p>
                         <ul className="list-none space-y-1 mt-2 mb-4 pl-2">
                             <li>🇺🇸 <strong>United States</strong> – All states (excluding certain restricted areas)</li>
-                            <li>🇨🇦 <strong>Canada</strong> – All provinces and territories</li>
+
                         </ul>
                     </div>
 
@@ -60,15 +60,11 @@ const ShippingPolicy = () => {
                                         <td className="p-3 border-r border-gray-200">3–7 business days</td>
                                         <td className="p-3">2–4 business days</td>
                                     </tr>
-                                    <tr>
-                                        <td className="p-3 border-r border-gray-200 font-medium text-black">Canada</td>
-                                        <td className="p-3 border-r border-gray-200">3–8 business days</td>
-                                        <td className="p-3">2–5 business days</td>
-                                    </tr>
+                                   
                                 </tbody>
                             </table>
                         </div>
-                        
+
                         <h3 className="text-lg font-bold text-black mb-2 mt-6">Important Notice:</h3>
                         <ul className="list-disc pl-6 space-y-1 mt-2 mb-4">
                             <li>Delivery timelines are estimated and not guaranteed</li>
@@ -87,7 +83,7 @@ const ShippingPolicy = () => {
                             <li>Selected shipping method</li>
                         </ul>
                         <h3 className="text-lg font-bold text-black mb-2 mt-6">Free Shipping Offer:</h3>
-                        <p className="mb-4">We offer free standard shipping on orders over $249 (where applicable).</p>
+                        <p className="mb-4">We offer free standard shipping on orders over $50 (where applicable).</p>
                         <p>Promotional shipping offers, including free shipping, may be available during specific campaigns and are subject to change without prior notice.</p>
                     </div>
 
@@ -183,7 +179,7 @@ const ShippingPolicy = () => {
                             <p className="font-bold text-black">Innovation Dynamics Group LLC</p>
                             <p>📧 Email: support@innovationdynamicsgroup.com</p>
                             <p>📞 Phone: +1-612-445-9132</p>
-                            <p>📍 Registered Address:<br/>11397 Quincy St NE<br/>Blaine, MN 55434<br/>United States</p>
+                            <p>📍 Registered Address:<br />11397 Quincy St NE<br />Blaine, MN 55434<br />United States</p>
                         </div>
                         <p className="mt-6">We are committed to responding promptly and assisting you with all shipping-related concerns.</p>
                     </div>

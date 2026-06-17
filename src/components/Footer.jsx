@@ -65,7 +65,7 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-neutral-400 text-sm leading-relaxed max-w-sm">
-              Innovation Dynamics Group LLC is an independent U.S.-based retailer providing printers and related products with verified sourcing, reliable fulfillment, and a seamless shopping experience across the U.S. and Canada.
+              Innovation Dynamics Group LLC is an independent U.S.-based retailer providing printers and related products with verified sourcing, reliable fulfillment, and a seamless shopping experience across the U.S.
             </p>
           </div>
 
@@ -104,6 +104,7 @@ const Footer = () => {
                   // { name: "Shipping Policy", link: "/shipping-policy/" },
                   // { name: "Return & Exchange", link: "/return-exchange/" },
                   { name: "Shipping & Return", link: "/refund-policy/" },
+                   { name: "Warranty & Safety", link: "/warranty-safety/" },
                   { name: "Buying Guide", link: "/buying-guide/" },
                   { name: "Support Hub", link: "/resources/" },
                 ].map((item) => (

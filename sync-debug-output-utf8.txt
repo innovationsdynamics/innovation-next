@@ -112,6 +112,12 @@ DEBUG: refund-policy C:\Users\pc\Desktop\projects\innovation\src\app\refund-poli
   keywords: 'innovation dynamics group, refund policy, printers, office supplies, printer retailer',
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
 }
+DEBUG: warranty-safety C:\Users\pc\Desktop\projects\innovation\src\app\warranty-safety\page.jsx {
+  title: '',
+  description: 'Learn about manufacturer warranties, printer safety guidelines, maintenance recommendations, and proper product care at Innovation Dynamics Group LLC.',
+  keywords: 'innovation dynamics group, warranty information, printer warranty, printer safety, scanner safety, printer maintenance, office equipment, printer retailer',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+}
 DEBUG: resources C:\Users\pc\Desktop\projects\innovation\src\app\resources\page.jsx {
   title: '',
   description: 'Access technical resources, driver links, and support information at Innovation Dynamics Group.',
@@ -126,7 +132,7 @@ DEBUG: return-exchange C:\Users\pc\Desktop\projects\innovation\src\app\return-ex
 }
 DEBUG: shipping-policy C:\Users\pc\Desktop\projects\innovation\src\app\shipping-policy\page.jsx {
   title: '',
-  description: 'View our shipping rates, timelines, and logistical framework for the United States and Canada.',
+  description: 'View our shipping rates, timelines, and logistical framework for the United States.',
   keywords: 'innovation dynamics group, shipping policy, printers, office supplies, printer retailer',
   robots: 'index, follow'
 }
@@ -167,6 +173,7 @@ Patched src\app\login\page.jsx
 Patched src\app\office-printers\page.jsx
 Patched src\app\privacy-policy\page.jsx
 Patched src\app\refund-policy\page.jsx
+Patched src\app\warranty-safety\page.jsx
 Patched src\app\resources\page.jsx
 Patched src\app\return-exchange\page.jsx
 Patched src\app\shipping-policy\page.jsx

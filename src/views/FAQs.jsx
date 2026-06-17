@@ -9,68 +9,68 @@ const FAQs = () => {
         setOpenIndex(openIndex === index ? -1 : index);
     };
 
-    const faqs = [
-        {
-            question: "1. What is Innovation Dynamics Group LLC?",
-            answer: "Innovation Dynamics Group LLC is an independent online retailer offering printers and printing supplies for home, office, and business use across the United States and Canada."
-        },
-        {
-            question: "2. Are you affiliated with brands like HP, Canon, or Epson?",
-            answer: "No. Innovation Dynamics Group LLC operates independently and is not affiliated with or endorsed by any manufacturer unless explicitly stated. All brand names and trademarks are used for identification purposes only."
-        },
-        {
-            question: "3. Where do you ship?",
-            answer: "We currently ship across the United States and Canada. Shipping availability may vary based on location and carrier service."
-        },
-        {
-            question: "4. Do you offer free shipping?",
-            answer: "Yes, free shipping may be available on qualifying orders. Shipping eligibility and conditions are shown at checkout."
-        },
-        {
-            question: "5. How long does delivery take?",
-            answer: "Estimated delivery times – United States: 3–7 business days; Canada: 3–8 business days. Delivery times are estimates and may vary depending on location, carrier delays, or external factors."
-        },
-        {
-            question: "6. How can I track my order?",
-            answer: "Once your order is shipped, you will receive a tracking number via email. You can use this to track your shipment through the carrier’s website."
-        },
-        {
-            question: "7. What is your return policy?",
-            answer: "We offer a 30-day return window for eligible items. Products must be unused and in original packaging unless defective. For full details, please refer to our Return & Refund Policy."
-        },
-        {
-            question: "8. How long does it take to receive a refund?",
-            answer: "Refunds are processed within 3–5 business days after the returned item is received and inspected. Final timing may depend on your payment provider."
-        },
-        {
-            question: "9. What if I receive a damaged or incorrect item?",
-            answer: "If your order arrives damaged or incorrect: Contact us within 48 hours of delivery and provide photos of the product and packaging. We will arrange a replacement or refund as appropriate."
-        },
-        {
-            question: "10. Can I cancel my order?",
-            answer: "Orders can be canceled before shipment only. Once shipped, cancellations are not possible, but you may return the item according to our policy."
-        },
-        {
-            question: "11. Do your products come with a warranty?",
-            answer: "Yes, most products include a manufacturer warranty, where applicable. Warranty terms are provided by the respective brand."
-        },
-        {
-            question: "12. Do you provide technical support?",
-            answer: "We offer general product guidance and assistance, but we do not provide official manufacturer technical support. For detailed technical issues or warranty claims, customers may need to contact the manufacturer directly."
-        },
-        {
-            question: "13. How is my personal information protected?",
-            answer: "We take privacy seriously and only collect necessary information to process orders and provide support. We do not sell or share personal data for advertising purposes. For more details, please review our Privacy Policy."
-        },
-        {
-            question: "14. Do you use cookies or tracking technologies?",
-            answer: "We use essential cookies only to ensure website functionality, such as cart and checkout. We do not use advertising or tracking cookies."
-        },
-        {
-            question: "15. How can I contact customer support?",
-            answer: "You can reach Innovation Dynamics Group LLC via email at support@innovationdynamicsgroup.com or call +1-612-445-9132. Our location is 11397 Quincy St NE, Blaine, MN 55434."
-        }
-    ];
+const faqs = [
+    {
+        question: "1. What is Innovation Dynamics Group LLC?",
+        answer: "Innovation Dynamics Group LLC is an independent online retailer offering printers and printing supplies for home, office, and business use across the United States."
+    },
+    {
+        question: "2. Are you affiliated with brands like HP, Canon, or Epson?",
+        answer: "No. Innovation Dynamics Group LLC operates independently and is not affiliated with or endorsed by any manufacturer unless explicitly stated. All brand names and trademarks are used for identification purposes only."
+    },
+    {
+        question: "3. Where do you ship?",
+        answer: "We currently ship throughout the United States. Shipping availability may vary based on your location and carrier service."
+    },
+    {
+        question: "4. Do you offer free shipping?",
+        answer: "Yes. We offer free shipping on qualifying orders over $50 within the United States. Shipping eligibility and any applicable conditions are shown at checkout."
+    },
+    {
+        question: "5. How long does delivery take?",
+        answer: "Estimated delivery within the United States is typically 3–7 business days. Delivery times may vary depending on your location, weather conditions, carrier delays, or other external factors."
+    },
+    {
+        question: "6. How can I track my order?",
+        answer: "Once your order has shipped, you'll receive a tracking number via email. You can use it to monitor your shipment through the carrier's website."
+    },
+    {
+        question: "7. What is your return policy?",
+        answer: "We offer a 30-day return window for eligible items. Products must be unused and in their original packaging unless they are defective. Please refer to our Return & Refund Policy for complete details."
+    },
+    {
+        question: "8. How long does it take to receive a refund?",
+        answer: "Refunds are typically processed within 3–5 business days after the returned item has been received and inspected. The time for the refund to appear in your account may vary depending on your payment provider."
+    },
+    {
+        question: "9. What if I receive a damaged or incorrect item?",
+        answer: "If your order arrives damaged or incorrect, please contact us within 48 hours of delivery and provide photos of the product and packaging. We'll arrange a replacement or refund as appropriate."
+    },
+    {
+        question: "10. Can I cancel my order?",
+        answer: "Orders may be canceled before they are shipped. Once an order has shipped, cancellations are no longer possible, but eligible items may be returned according to our Return & Refund Policy."
+    },
+    {
+        question: "11. Do your products come with a warranty?",
+        answer: "Yes. Most eligible products include the applicable manufacturer warranty. Warranty terms and coverage are determined by the respective manufacturer."
+    },
+    {
+        question: "12. Do you provide technical support?",
+        answer: "We provide general product guidance and customer assistance. For technical troubleshooting, warranty claims, or advanced product support, customers should contact the product manufacturer directly."
+    },
+    {
+        question: "13. How is my personal information protected?",
+        answer: "We take your privacy seriously and collect only the information necessary to process orders and provide customer support. We do not sell your personal information. Please review our Privacy Policy for more details."
+    },
+    {
+        question: "14. Do you use cookies or tracking technologies?",
+        answer: "We use essential cookies to ensure our website functions properly, including features such as shopping cart and checkout. We do not use advertising or third-party tracking cookies."
+    },
+    {
+        question: "15. How can I contact customer support?",
+        answer: "You can contact Innovation Dynamics Group LLC by email at support@innovationdynamicsgroup.com or by phone at +1-612-445-9132. Our business address is 11397 Quincy St NE, Blaine, MN 55434."
+    }
+];
 
     return (
         <div className="bg-white min-h-screen pt-28 pb-16 px-6 font-sans text-left text-gray-800">

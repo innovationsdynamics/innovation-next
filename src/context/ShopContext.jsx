@@ -101,8 +101,8 @@ export const ShopProvider = ({ children }) => {
     const wishlistCount = wishlist.length;
     const cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
     
-    // Dynamic Pricing Logic: Free shipping for orders $249 and above
-    const shippingPrice = cartTotal >= 249 || cartTotal === 0 ? 0 : 45;
+    // Dynamic Pricing Logic: Free shipping for orders $50 and above
+    const shippingPrice = cartTotal >= 50 || cartTotal === 0 ? 0 : 45;
     const taxPrice = 0; // Tax removed per user request
     const totalPrice = cartTotal + shippingPrice;
 

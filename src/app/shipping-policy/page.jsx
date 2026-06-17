@@ -2,14 +2,16 @@ import ShippingPolicy from '@/views/ShippingPolicy';
 
 export const metadata = {
   title: "Shipping Policy | Innovation Dynamics Group | Independent Printer Retailer",
-  description: "View our shipping rates, timelines, and logistical framework for the United States and Canada.",
+  description: "View our shipping rates, timelines, and logistical framework for the United States.",
   keywords: "innovation dynamics group, shipping policy, printers, office supplies, printer retailer",
   robots: "index, follow",
   authors: [{ name: "Innovation Dynamics Group LLC" }],
-  alternates: { canonical: "https://innovationdynamicsgroup.com/shipping-policy/" },
+  alternates: {
+    canonical: "https://innovationdynamicsgroup.com/shipping-policy/",
+  },
   openGraph: {
     title: "Shipping Policy | Innovation Dynamics Group | Independent Printer Retailer",
-    description: "View our shipping rates, timelines, and logistical framework for the United States and Canada.",
+    description: "View our shipping rates, timelines, and logistical framework for the United States.",
     url: "https://innovationdynamicsgroup.com/shipping-policy/",
     siteName: "Innovation Dynamics Group",
     type: "website",
@@ -26,11 +28,13 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Shipping Policy | Innovation Dynamics Group | Independent Printer Retailer",
-    description: "View our shipping rates, timelines, and logistical framework for the United States and Canada.",
+    description: "View our shipping rates, timelines, and logistical framework for the United States.",
     images: [
       "https://innovationdynamicsgroup.com/idg-logo.png",
     ],
   },
 };
 
-export default function Page() { return <ShippingPolicy />; }
+export default function Page() {
+  return <ShippingPolicy />;
+}

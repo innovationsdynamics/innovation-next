@@ -14,7 +14,7 @@ const BuyingGuide = () => {
 
                 <div className="space-y-6 text-gray-700 leading-relaxed font-normal text-sm md:text-base">
                     <p>
-                        Choosing the correct hardware profile and replenishment matrix is fundamental to operational success. This Strategic procurement framework is designed to streamline your equipment selection and optimize printing infrastructure across the U.S. and Canada.
+                        Choosing the correct hardware profile and replenishment matrix is fundamental to operational success. This Strategic procurement framework is designed to streamline your equipment selection and optimize printing infrastructure across the U.S.
                     </p>
 
                     <div>

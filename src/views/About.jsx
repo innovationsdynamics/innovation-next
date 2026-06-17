@@ -94,7 +94,7 @@ const About = () => {
                             Innovation Dynamics Group LLC, based in Blaine, Minnesota, USA, is a registered and legitimate business operating as an independent online retailer specializing in printers and related equipment for home, office, and professional use.
                             <br />
 
-                            Established in 2024, we have successfully served 1,000+ customers across the United States and Canada, supporting both individual users and businesses with reliable printing solutions and a structured, transparent online shopping experience.
+                            Established in 2024, we have successfully served 1,000+ customers across the United States, supporting both individual users and businesses with reliable printing solutions and a structured, transparent online shopping experience.
                         </p>
 
                         <div className="mt-16 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-10">
@@ -157,7 +157,7 @@ const About = () => {
                             </div>
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
                                 {[
-                                    { title: "Free Shipping", text: "Above $249" },
+                                    { title: "Free Shipping", text: "Above $50" },
                                     { title: "Full Warranty", text: "Manufacturer Backed" },
                                     { title: "Expert Support", text: "Dedicated Assistance" }
                                 ].map((item, idx) => (
@@ -234,101 +234,103 @@ const About = () => {
 
             {/* Our Mission */}
 
-            <section className="py-16 sm:py-24 bg-[#F8F9FA] border-t border-gray-100 overflow-hidden">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+           <section className="py-16 sm:py-24 bg-[#F8F9FA] border-t border-gray-100 overflow-hidden">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-                        {/* Left Content */}
-                        <div>
-                            <span className="text-[11px] font-black uppercase tracking-[0.3em] text-[#024ad8] mb-4 block">
-                                Our Commitment
-                            </span>
+            {/* Left Content */}
+            <div>
+                <span className="text-[11px] font-black uppercase tracking-[0.3em] text-[#024ad8] mb-4 block">
+                    Our Commitment
+                </span>
 
-                            <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-6 leading-tight uppercase">
-                                Delivering Reliable Technology Resources
-                            </h2>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-black tracking-tight mb-6 leading-tight">
+                    Simplifying Your Printing Experience
+                </h2>
 
-                            <div className="w-16 h-1 bg-[#024ad8] mb-8"></div>
+                <div className="w-16 h-1 bg-[#024ad8] mb-8"></div>
 
-                            <div className="space-y-6 text-gray-600 font-medium leading-relaxed">
-                                <p>
-                                    At Innovation Dynamics Group LLC, our focus is on making technology
-                                    information more accessible, understandable, and practical for
-                                    everyday users. We believe people should be able to find clear
-                                    guidance without navigating through unnecessary complexity or
-                                    confusing technical language.
-                                </p>
+                <div className="space-y-6 text-gray-600 leading-8">
+                    <p>
+                        At <strong>Innovation Dynamics Group LLC</strong>, our goal is to make
+                        shopping for printers, scanners, and printing accessories simple,
+                        convenient, and dependable. Whether you're upgrading your home office,
+                        managing a growing business, or replacing outdated equipment, we help you
+                        find solutions that fit your needs without unnecessary complexity.
+                    </p>
 
-                                <p>
-                                    Our platform is built around educational resources, step-by-step
-                                    instructions, and carefully organized information designed to help
-                                    users make informed decisions. Whether you're setting up a device,
-                                    exploring compatibility requirements, or researching available
-                                    options, our goal is to simplify the process.
-                                </p>
+                    <p>
+                        We carefully select products from trusted manufacturers, offering a
+                        collection that balances quality, performance, and value. Instead of
+                        overwhelming customers with countless choices, we focus on reliable
+                        technology that delivers consistent results for everyday printing and
+                        business workflows.
+                    </p>
 
-                                <p>
-                                    We continuously improve our content to ensure it remains relevant,
-                                    easy to follow, and useful for both new and experienced users. By
-                                    prioritizing clarity, consistency, and transparency, we strive to
-                                    create a better experience for everyone who relies on our resources.
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* Right Card */}
-                        <div className="bg-white border border-gray-100 rounded-sm shadow-sm p-8 lg:p-10">
-                            <h3 className="text-2xl font-extrabold text-black mb-8 uppercase tracking-tight">
-                                What We Stand For
-                            </h3>
-
-                            <div className="space-y-5">
-                                {[
-                                    "Clear and easy-to-follow information",
-                                    "Reliable educational resources",
-                                    "Transparency in every recommendation",
-                                    "User-focused content and guidance",
-                                    "Consistent quality standards",
-                                    "Continuous platform improvements",
-                                ].map((item, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex items-start gap-4"
-                                    >
-                                        <div className="w-8 h-8 rounded-full bg-[#024ad8]/10 flex items-center justify-center flex-shrink-0">
-                                            <svg
-                                                className="w-4 h-4 text-[#024ad8]"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                                strokeWidth="3"
-                                            >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    d="M5 13l4 4L19 7"
-                                                />
-                                            </svg>
-                                        </div>
-
-                                        <p className="text-sm font-medium text-gray-700 leading-relaxed">
-                                            {item}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="mt-8 pt-8 border-t border-gray-100">
-                                <p className="text-[13px] text-gray-500 font-medium leading-relaxed">
-                                    Our objective is simple: provide dependable information that helps
-                                    users navigate technology-related decisions with greater confidence
-                                    and clarity.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <p>
+                        Beyond providing quality products, we're committed to delivering a better
+                        shopping experience through clear product information, practical buying
+                        guidance, transparent policies, and responsive customer support. Our
+                        mission is to help every customer shop with confidence and receive
+                        dependable products backed by reliable service.
+                    </p>
                 </div>
-            </section>
+            </div>
+
+            {/* Right Card */}
+            <div className="bg-white border border-gray-100 rounded-lg shadow-sm p-8 lg:p-10">
+                <h3 className="text-2xl font-extrabold text-black mb-8">
+                    What We Offer
+                </h3>
+
+                <div className="space-y-5">
+                    {[
+                        "Quality printers and printing accessories",
+                        "Fast and dependable order fulfillment",
+                        "Secure and protected online checkout",
+                        "Responsive customer support",
+                        "Competitive pricing across popular brands",
+                        "Reliable shopping experience from start to finish",
+                    ].map((item, index) => (
+                        <div
+                            key={index}
+                            className="flex items-start gap-4"
+                        >
+                            <div className="w-8 h-8 rounded-full bg-[#024ad8]/10 flex items-center justify-center flex-shrink-0">
+                                <svg
+                                    className="w-4 h-4 text-[#024ad8]"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="3"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M5 13l4 4L19 7"
+                                    />
+                                </svg>
+                            </div>
+
+                            <p className="text-sm font-medium text-gray-700 leading-relaxed">
+                                {item}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="mt-8 pt-8 border-t border-gray-100">
+                    <p className="text-[13px] text-gray-500 leading-relaxed">
+                        We are dedicated to providing dependable products, transparent service,
+                        and a seamless shopping experience, helping customers purchase printing
+                        solutions with confidence every step of the way.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
             {/* ── Section: How We Work (Process) ─────────────────────────── */}
             <section className="py-24 bg-black text-white overflow-hidden relative">
