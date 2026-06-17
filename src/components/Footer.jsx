@@ -106,7 +106,7 @@ const Footer = () => {
                   { name: "Shipping & Return", link: "/refund-policy/" },
                    { name: "Warranty & Safety", link: "/warranty-safety/" },
                   { name: "Buying Guide", link: "/buying-guide/" },
-                  { name: "Support Hub", link: "/resources/" },
+                 
                 ].map((item) => (
                   <li key={item.name}>
                     <Link

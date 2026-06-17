@@ -52,10 +52,10 @@ const getShippingRates = asyncHandler(async (req, res) => {
   // Company Address
   const fromAddress = await client.Address.create({
     company: process.env.COMPANY_NAME || 'Innovation Dynamics Group LLC',
-    street1: process.env.COMPANY_ADDRESS || '123 Business Rd',
-    city: process.env.COMPANY_CITY || 'New York',
-    state: process.env.COMPANY_STATE || 'NY',
-    zip: process.env.COMPANY_ZIP || '10001',
+    street1: process.env.COMPANY_ADDRESS || '11397 Quincy St NE',
+    city: process.env.COMPANY_CITY || 'Blaine',
+    state: process.env.COMPANY_STATE || 'MN',
+    zip: process.env.COMPANY_ZIP || '55434',
     country: 'US',
     phone: process.env.COMPANY_PHONE || '+1-612-445-9132',
   });

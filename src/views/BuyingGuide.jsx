@@ -1,84 +1,47 @@
 import React from 'react';
+import Link from 'next/link';
+import { ArrowLeft, Printer, Scan, Settings } from 'lucide-react';
+import { guides } from './GuideDetail';
 
 const BuyingGuide = () => {
-    return (
-        <div className="bg-white min-h-screen pt-28 pb-16 px-6 font-sans text-left text-gray-800">
-            <div className="max-w-4xl mx-auto text-left">
-                <header className="mb-12 border-b border-gray-100 pb-8 text-left">
-                    <h1 className="text-4xl font-bold text-black mb-4">Buying Guide</h1>
-                    <div className="flex flex-col sm:flex-row gap-6 text-xs text-gray-400 font-medium whitespace-nowrap">
-                        <p>Effective Date: March 25, 2026</p>
-                        <p>Last Updated: March 25, 2026</p>
-                    </div>
-                </header>
+  return (
+    <div className="bg-[#F8F9FA]  pt-28 pb-16 px-4 sm:px-6 font-sans">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <header className="mb-12">
+          <h1 className="text-4xl font-extrabold text-black mb-4">Helpful Guides</h1>
+          <p className="text-lg text-gray-600 leading-relaxed max-w-4xl">
+            Whether you're shopping for a new printer, scanner, or looking to get more out of your current equipment, our guides are here to help. Browse our collection of practical resources designed to make your purchasing decisions easier and help you maintain your devices for years to come.
+          </p>
+        </header>
 
-                <div className="space-y-6 text-gray-700 leading-relaxed font-normal text-sm md:text-base">
-                    <p>
-                        Choosing the correct hardware profile and replenishment matrix is fundamental to operational success. This Strategic procurement framework is designed to streamline your equipment selection and optimize printing infrastructure across the U.S.
-                    </p>
-
-                    <div>
-                        <h2 className="text-xl font-bold text-black mb-2 mt-8">1. Solution Architecture</h2>
-                        <p>We categorize our inventory based on specific technical requirements and operational environments to ensure a perfect match for your workflow.</p>
-                        
-                        <h3 className="text-lg font-bold text-black mb-2 mt-4">1.1 Home Infrastructure</h3>
-                        <p>Compact, high-fidelity systems optimized for remote professionals, academic workflows, and creative output. Key features include zero-footprint design, wireless handshake capabilities, and versatile media support for diverse residential printing needs.</p>
-                        
-                        <h3 className="text-lg font-bold text-black mb-2 mt-4">1.2 Office Performance</h3>
-                        <p>High-velocity deployment units engineered for enterprise reliability, multi-tenant access, and heavy volume. These units feature rapid output tiers, modular reservoirs, and robust duplex engines to handle rigorous business demands.</p>
-                    </div>
-
-                    <div>
-                        <h2 className="text-xl font-bold text-black mb-2 mt-8">2. Technology Matrix</h2>
-                        <p>Understanding the underlying engine technology is critical for project-specific deployment.</p>
-                        
-                        <h3 className="text-lg font-bold text-black mb-2 mt-4">2.1 Inkjet Precision</h3>
-                        <p>Recommended for luxury color reproduction, vibrant marketing collateral, and precision-grade photographic assets where detail and color depth are paramount.</p>
-                        
-                        <h3 className="text-lg font-bold text-black mb-2 mt-4">2.2 Laser Efficiency</h3>
-                        <p>Selected for sharp text clarity, accelerated document throughput, and superior cost-per-page performance in high-document, professional environments.</p>
-                    </div>
-
-                    <div>
-                        <h2 className="text-xl font-bold text-black mb-2 mt-8">3. Procurement Workflow</h2>
-                        <p>Follow our standardized approach to equipment acquisition for a seamless fulfillment experience:</p>
-                        <ul className="list-disc pl-6 space-y-2 mt-2">
-                            <li><strong>Define Requirements:</strong> Audit whether your specific application requires home-tier, enterprise, or specialized hardware.</li>
-                            <li><strong>Spec Comparison:</strong> Evaluate page yield metadata, transmission speeds, and encryption protocols.</li>
-                            <li><strong>Asset Selection:</strong> Finalize hardware platform and verify compatible replenishment supplies.</li>
-                            <li><strong>Deployment:</strong> Execute procurement and await expedited executive logistics delivery.</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h2 className="text-xl font-bold text-black mb-2 mt-8">4. Quality Curation Guaranteed</h2>
-                        <p>
-                            Innovation Dynamics Group LLC only manages authorized assets that meet our rigorous standards. This framework empowers your infrastructure with verified printing excellence, authentic manufacturer-backed reliability, and dedicated support.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h2 className="text-xl font-bold text-black mb-2 mt-8">5. Assistance & Contact</h2>
-                        <p>For procurement-related inquiries or technical guidance, please contact our support center:</p>
-                        <div className="mt-4 space-y-2">
-                            <p className="font-bold text-black">Innovation Dynamics Group LLC</p>
-                            <p>📧 Email: support@innovationdynamicsgroup.com</p>
-                            <p>📞 Phone: +1-612-445-9132</p>
-                            <p>📍 Address: 11397 Quincy St NE, Blaine, MN 55434, United States</p>
-                        </div>
-                    </div>
+        {/* Guide Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {guides.map((guide) => (
+            <Link href={`/buying-guide/${guide.slug}`} key={guide.slug} className="group">
+              <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:border-[#024ad8] hover:shadow-lg transition-all duration-300">
+                <div className={`w-12 h-12 ${guide.iconBg} rounded-lg flex items-center justify-center mb-6`}>
+                  {guide.icon}
                 </div>
-
-                <footer className="mt-24 pt-10 border-t border-gray-100 text-center">
-                    <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">
-                        Innovation Dynamics Group LLC © 2026
-                    </p>
-                </footer>
-            </div>
+                <h3 className="text-xl font-bold text-black mb-3 group-hover:text-[#024ad8] transition-colors">
+                  {guide.title}
+                </h3>
+                <p className="text-gray-600 text-lg mb-4">
+                  {guide.intro.slice(0, 120)}...
+                </p>
+                <div className="flex items-center gap-2 text-blue-600 font-semibold">
+                  Read More <ArrowLeft size={16} className="rotate-180" />
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
-    );
+
+   
+       
+      </div>
+    </div>
+  );
 };
 
 export default BuyingGuide;
-
-
