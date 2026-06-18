@@ -13,7 +13,7 @@ function Disclaimer() {
 
         <div className="space-y-6 text-gray-700 leading-relaxed font-normal text-sm md:text-base">
           <p>
-            The information provided on this website ("Website") is intended for general informational purposes only. By accessing and using this Website, you acknowledge that you have read, understood, and agree to be bound by this Disclaimer. If you do not agree with any part of this Disclaimer, please do not use our Website.
+            The information provided on this innovationdynamicsgroup.com ("Website") is intended for general informational purposes only. By accessing and using this Website, you acknowledge that you have read, understood, and agree to be bound by this Disclaimer. If you do not agree with any part of this Disclaimer, please do not use our Website.
           </p>
 
           <div>
