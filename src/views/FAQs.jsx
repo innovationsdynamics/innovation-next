@@ -1,4 +1,4 @@
- 'use client';
+'use client';
 import React, { useState } from 'react';
 import { Plus, Minus, HelpCircle } from 'lucide-react';
 
@@ -9,68 +9,41 @@ const FAQs = () => {
         setOpenIndex(openIndex === index ? -1 : index);
     };
 
-const faqs = [
-    {
-        question: "1. What is Innovation Dynamics Group LLC?",
-        answer: "Innovation Dynamics Group LLC is an independent online retailer offering printers and printing supplies for home, office, and business use across the United States."
-    },
-    {
-        question: "2. Are you affiliated with brands like HP, Canon, or Epson?",
-        answer: "No. Innovation Dynamics Group LLC operates independently and is not affiliated with or endorsed by any manufacturer unless explicitly stated. All brand names and trademarks are used for identification purposes only."
-    },
-    {
-        question: "3. Where do you ship?",
-        answer: "We currently ship throughout the United States. Shipping availability may vary based on your location and carrier service."
-    },
-    {
-        question: "4. Do you offer free shipping?",
-        answer: "Yes. We offer free shipping on qualifying orders over $50 within the United States. Shipping eligibility and any applicable conditions are shown at checkout."
-    },
-    {
-        question: "5. How long does delivery take?",
-        answer: "Estimated delivery within the United States is typically 3–7 business days. Delivery times may vary depending on your location, weather conditions, carrier delays, or other external factors."
-    },
-    {
-        question: "6. How can I track my order?",
-        answer: "Once your order has shipped, you'll receive a tracking number via email. You can use it to monitor your shipment through the carrier's website."
-    },
-    {
-        question: "7. What is your return policy?",
-        answer: "We offer a 30-day return window for eligible items. Products must be unused and in their original packaging unless they are defective. Please refer to our Return & Refund Policy for complete details."
-    },
-    {
-        question: "8. How long does it take to receive a refund?",
-        answer: "Refunds are typically processed within 3–5 business days after the returned item has been received and inspected. The time for the refund to appear in your account may vary depending on your payment provider."
-    },
-    {
-        question: "9. What if I receive a damaged or incorrect item?",
-        answer: "If your order arrives damaged or incorrect, please contact us within 48 hours of delivery and provide photos of the product and packaging. We'll arrange a replacement or refund as appropriate."
-    },
-    {
-        question: "10. Can I cancel my order?",
-        answer: "Orders may be canceled before they are shipped. Once an order has shipped, cancellations are no longer possible, but eligible items may be returned according to our Return & Refund Policy."
-    },
-    {
-        question: "11. Do your products come with a warranty?",
-        answer: "Yes. Most eligible products include the applicable manufacturer warranty. Warranty terms and coverage are determined by the respective manufacturer."
-    },
-    {
-        question: "12. Do you provide technical support?",
-        answer: "We provide general product guidance and customer assistance. For technical troubleshooting, warranty claims, or advanced product support, customers should contact the product manufacturer directly."
-    },
-    {
-        question: "13. How is my personal information protected?",
-        answer: "We take your privacy seriously and collect only the information necessary to process orders and provide customer support. We do not sell your personal information. Please review our Privacy Policy for more details."
-    },
-    {
-        question: "14. Do you use cookies or tracking technologies?",
-        answer: "We use essential cookies to ensure our website functions properly, including features such as shopping cart and checkout. We do not use advertising or third-party tracking cookies."
-    },
-    {
-        question: "15. How can I contact customer support?",
-        answer: "You can contact Innovation Dynamics Group LLC by email at support@innovationdynamicsgroup.com or by phone at +1-612-445-9132. Our business address is 11397 Quincy St NE, Blaine, MN 55434."
-    }
-];
+    const faqs = [
+        {
+            question: "1. What types of printers and scanners do you sell?",
+            answer: "We carry inkjet printers, laser printers, multifunction (all-in-one) devices, flatbed scanners, sheet-fed scanners, and portable scanners. Our catalog includes models from well-known manufacturers suitable for home, office, and professional use."
+        },
+        {
+            question: "2. Do you ship to all 50 U.S. states?",
+            answer: "Yes, we ship to all 50 states within the United States. Orders over $50 qualify for free standard shipping. Standard delivery typically takes 5 to 7 business days depending on your location. Expedited shipping options are available at checkout for an additional fee."
+        },
+        {
+            question: "3. What is your return policy?",
+            answer: "We offer a 30-day return policy on most products. Items must be returned in their original packaging and in unused condition. Once we receive and inspect the return, we process refunds within 5 to 10 business days. Please visit our Shipping & Returns page for complete details."
+        },
+        {
+            question: "4. Do your products come with a warranty?",
+            answer: "All products sold through Neo Printix include the manufacturer's standard warranty. Warranty terms and duration vary by brand and model. We recommend checking the product listing or the manufacturer's website for specific warranty details for the item you are interested in."
+        },
+        {
+            question: "5. How do I decide between an inkjet and a laser printer?",
+            answer: "Inkjet printers are generally better for photo printing and occasional use, with lower upfront costs. Laser printers excel at high-volume text printing with faster speeds and lower cost per page over time. If you print frequently or need sharp text documents, a laser printer is usually the more economical choice. Our buying guides can help you compare in detail."
+        },
+        {
+            question: "6. Can I print from my phone or tablet?",
+            answer: "Many of the printers we sell support mobile printing through Wi-Fi, AirPrint (for Apple devices), or manufacturer-specific apps. Check the product specifications to confirm mobile printing compatibility for the model you are considering."
+        },
+        {
+            question: "7. Do you sell ink, toner, or replacement parts?",
+            answer: "Our focus is on printers and scanners. For ink, toner, and replacement parts, we recommend purchasing directly from the manufacturer or an authorized supplies retailer to ensure compatibility and quality."
+        },
+
+        {
+            question: "8. How can I contact customer support?",
+            answer: "You can reach Innovation Dynamics Group LLC via email at support@innovationdynamicsgroup.com or call +1-612-445-9132. Our business address is 11397 Quincy St NE, Blaine, MN 55434."
+        }
+    ];
 
     return (
         <div className="bg-white min-h-screen pt-28 pb-16 px-6 font-sans text-left text-gray-800">
@@ -85,8 +58,8 @@ const faqs = [
                         <div
                             key={index}
                             className={`border rounded-sm overflow-hidden transition-all duration-300 bg-white ${openIndex === index
-                                    ? 'shadow-sm border-[#024ad8]/40'
-                                    : 'border-gray-100 hover:border-gray-200'
+                                ? 'shadow-sm border-[#024ad8]/40'
+                                : 'border-gray-100 hover:border-gray-200'
                                 }`}
                         >
                             <button
@@ -107,8 +80,8 @@ const faqs = [
 
                             <div
                                 className={`overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index
-                                        ? 'max-h-[500px] opacity-100'
-                                        : 'max-h-0 opacity-0'
+                                    ? 'max-h-[500px] opacity-100'
+                                    : 'max-h-0 opacity-0'
                                     }`}
                             >
                                 <div className="px-6 pb-6 pt-0">
@@ -124,13 +97,13 @@ const faqs = [
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-gray-100 font-medium">
                     <div className="space-y-6">
                         <div className="flex gap-4 items-start">
-                             <HelpCircle className="text-[#024ad8] flex-shrink-0 mt-1" size={18} />
-                             <div>
+                            <HelpCircle className="text-[#024ad8] flex-shrink-0 mt-1" size={18} />
+                            <div>
                                 <h3 className="font-bold text-black text-sm mb-2">Important Notice</h3>
                                 <p className="text-xs text-gray-500 leading-relaxed">
                                     Product availability, pricing, and delivery timelines are subject to change without prior notice. Please verify all details before placing an order. Manufacturer warranties are handled directly by the respective brand and may vary by product.
                                 </p>
-                             </div>
+                            </div>
                         </div>
                     </div>
 

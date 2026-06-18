@@ -6,7 +6,6 @@ import ProductCard from './ProductCard';
 const ProductGrid = ({ heading = "Products", products = [], onFilterChange }) => {
   const [filters, setFilters] = useState({
     sort: "",
-    brand: "",
     technology: [],
     usageCategory: [],
     allInOneType: [],
@@ -16,12 +15,6 @@ const ProductGrid = ({ heading = "Products", products = [], onFilterChange }) =>
 
   // Local filtering and sorting
   let filteredProducts = products;
-  if (filters.brand) {
-    filteredProducts = filteredProducts.filter(
-      (product) =>
-        (product.brand && product.brand.toLowerCase() === filters.brand.toLowerCase())
-    );
-  }
   if (filters.technology.length > 0) {
     filteredProducts = filteredProducts.filter((product) =>
       filters.technology.some((tech) =>

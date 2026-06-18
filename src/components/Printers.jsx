@@ -119,31 +119,23 @@ const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetai
     const [search, setSearch] = useState(initialSearch);
     const [debounced, setDeb] = useState(initialSearch);
     const [sortBy, setSortBy] = useState('featured');
-    const [selectedBrand, setSelectedBrand] = useState('');
     const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const pageParam = Number(searchParams.get('page')) || 1;
-    const brandParam = searchParams.get('brand') || '';
 
     const productList = useSelector(s => s.productList || {});
     const { loading, error, products = [], pages = 1, page = 1, total = 0 } = productList;
 
     useEffect(() => { setSearch(initialSearch); }, [initialSearch]);
     useEffect(() => { const t = setTimeout(() => setDeb(search), 400); return () => clearTimeout(t); }, [search]);
-    useEffect(() => { if (brandParam !== selectedBrand) setSelectedBrand(brandParam); }, [brandParam]);
     useEffect(() => {
         const cleanPath = pathname.replace(/\/$/, '');
         const isHomePrintersRoute = (forceHomeRoute || cleanPath === '/home-printers') && !debounced;
         const pageSize = isHomePrintersRoute ? 12 : null;
-        const isHomeFirstPage = isHomePrintersRoute && pageParam === 1 && !brandParam;
-        const isHomeRemainderPage = isHomePrintersRoute && pageParam > 1 && !brandParam;
-        const brandToUse = isHomeFirstPage ? 'HP' : selectedBrand;
-        const countAll = isHomeFirstPage;
-        const nonHpPage = isHomeRemainderPage;
 
-        dispatch(listProducts(debounced, catName, pageParam, brandToUse, usageCategory, pageSize, countAll, nonHpPage));
-    }, [dispatch, debounced, catName, usageCategory, selectedBrand, pageParam, pathname, brandParam, forceHomeRoute]);
+        dispatch(listProducts(debounced, catName, pageParam, '', usageCategory, pageSize));
+    }, [dispatch, debounced, catName, usageCategory, pageParam, pathname, forceHomeRoute]);
 
     if (error) {
         return (
@@ -206,30 +198,7 @@ const FilteredView = ({ catName, initialSearch = '', usageCategory = '', onDetai
                 </div>
             </div>
 
-            {/* Brand Filter */}
-            <div className="flex flex-wrap items-center gap-2 mb-8">
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mr-2">Brand:</span>
-                {['', 'HP', 'Brother', 'Canon', 'Epson'].map((brand) => (
-                    <button
-                        key={brand}
-                        onClick={() => {
-                            const newBrand = brand;
-                            setSelectedBrand(newBrand);
-                            const params = new URLSearchParams(searchParams.toString());
-                            if (newBrand) params.set('brand', newBrand); else params.delete('brand');
-                            params.set('page', '1');
-                            router.push(`${pathname}?${params.toString()}`, { scroll: false });
-                        }}
-                        className={`px-4 py-1.5 text-[9px] font-bold uppercase tracking-widest border transition-all ${
-                            selectedBrand === brand
-                                ? 'bg-black text-white border-black'
-                                : 'bg-white text-gray-500 border-gray-100 hover:border-black hover:text-black'
-                        }`}
-                    >
-                        {brand || 'All Brands'}
-                    </button>
-                ))}
-            </div>
+
 
             <div className="flex items-center gap-4 mb-8">
                 <div className="h-0.5 flex-grow bg-gray-100"></div>

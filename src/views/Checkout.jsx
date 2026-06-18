@@ -124,7 +124,7 @@ const Checkout = () => {
         e.preventDefault();
         
         // 1. Check country first
-        if (country.toUpperCase() !== 'US' && country.toUpperCase() !== 'UNITED STATES') {
+        if (country.toUpperCase() !== 'US' && country.toUpperCase() !== 'UNITED STATES' && country.toUpperCase() !== 'USA')  {
             setCustomAlert({ show: true, message: 'Sorry, we do not currently deliver to your location.' });
             return;
         }

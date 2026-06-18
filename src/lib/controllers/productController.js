@@ -156,9 +156,8 @@ const getProducts = asyncHandler(async (req, res) => {
         query.mainFunction = { $in: values };
     }
 
-    if (brand && brand !== 'undefined' && brand !== 'null') {
-        query.brand = { $regex: brand, $options: 'i' };
-    }
+    // Always filter to HP products by default
+    query.brand = { $regex: 'HP', $options: 'i' };
 
     let sortOption = {};
     if (sort === 'lowToHigh') {
@@ -169,41 +168,9 @@ const getProducts = asyncHandler(async (req, res) => {
 
     const pageSize = Number(req.query.limit) || 20;
     const page = Number(req.query.page) || 1;
-    const countAll = req.query.countAll === 'true';
-    const nonHpPage = req.query.nonHpPage === 'true';
-
-    if (nonHpPage && usageCategory) {
-        const homeQuery = { ...query };
-        delete homeQuery.brand;
-
-        const totalHomeCount = await Product.countDocuments(homeQuery);
-        const hpQuery = { ...homeQuery, brand: { $regex: 'HP', $options: 'i' } };
-        const hpCount = await Product.countDocuments(hpQuery);
-
-        query.brand = { $not: /HP/i };
-        const remainingPage = page - 1;
-        const products = await Product.find(query)
-            .populate('category', 'name')
-            .sort(sortOption)
-            .limit(pageSize)
-            .skip(pageSize * (remainingPage - 1));
-
-        return res.json({
-            products,
-            page,
-            pages: 1 + Math.ceil((totalHomeCount - hpCount) / pageSize),
-            total: totalHomeCount - hpCount,
-            totalAll: totalHomeCount
-        });
-    }
 
     const count = await Product.countDocuments(query);
     let totalCountForPages = count;
-    if (countAll) {
-        const totalQuery = { ...query };
-        delete totalQuery.brand;
-        totalCountForPages = await Product.countDocuments(totalQuery);
-    }
 
     const products = await Product.find(query)
         .populate('category', 'name')
@@ -211,7 +178,7 @@ const getProducts = asyncHandler(async (req, res) => {
         .limit(pageSize)
         .skip(pageSize * (page - 1));
 
-    res.json({ products, page, pages: Math.ceil(totalCountForPages / pageSize), total: count, totalAll: countAll ? totalCountForPages : undefined });
+    res.json({ products, page, pages: Math.ceil(totalCountForPages / pageSize), total: count });
 });
 
 // @desc    Fetch single product
@@ -560,9 +527,9 @@ const getSearchSuggestions = asyncHandler(async (req, res) => {
     }
 
     const suggestions = await Product.find({
+        brand: { $regex: 'HP', $options: 'i' },
         $or: [
             { title: { $regex: `^${query}`, $options: 'i' } },
-            { brand: { $regex: `^${query}`, $options: 'i' } },
             { color: { $regex: `^${query}`, $options: 'i' } }
         ]
     }).select('title brand color images slug price').limit(10);

@@ -18,6 +18,7 @@ export async function GET() {
   const getCategoryProducts = async (slug, usage = false) => {
     try {
       let query = {};
+      query.brand = { $regex: 'HP', $options: 'i' };
       if (usage) {
         query.usageCategory = { $in: [slug] };
       } else {

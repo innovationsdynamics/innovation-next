@@ -22,20 +22,6 @@ export default function ProductFilter({ filters, onChange }) {
   return (
     <div className="bg-white rounded-2xl shadow-xl p-6 mb-8 flex flex-wrap gap-6">
       <div>
-        <label className="block text-xs font-bold text-slate-700 mb-2">Brand</label>
-        <select
-          className="w-full border border-gray-300 rounded-md p-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
-          value={filters.brand || ""}
-          onChange={(e) => handleSelect("brand", e.target.value)}
-        >
-          <option value="">Select</option>
-          <option value="HP">HP</option>
-          <option value="Canon">Canon</option>
-          <option value="Epson">Epson</option>
-          <option value="Brother">Brother</option>
-        </select>
-      </div>
-      <div>
         <label className="block text-xs font-bold text-slate-700 mb-2">Technology</label>
         <div className="flex flex-wrap gap-3">
           {TECHNOLOGY_OPTIONS.map((opt) => (

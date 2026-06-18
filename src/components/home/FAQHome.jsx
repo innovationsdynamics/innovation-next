@@ -12,63 +12,36 @@ const FAQHome = () => {
 
     const faqs = [
         {
-            question: "1. What is Innovation Dynamics Group LLC?",
-            answer: "Innovation Dynamics Group LLC is an independent online retailer offering printers and printing supplies for home, office, and business use across the United States."
+            question: "1. What types of printers and scanners do you sell?",
+            answer: "We carry inkjet printers, laser printers, multifunction (all-in-one) devices, flatbed scanners, sheet-fed scanners, and portable scanners. Our catalog includes models from well-known manufacturers suitable for home, office, and professional use."
         },
         {
-            question: "2. Are you affiliated with brands like HP, Canon, or Epson?",
-            answer: "No. Innovation Dynamics Group LLC operates independently and is not affiliated with or endorsed by any manufacturer unless explicitly stated. All brand names and trademarks are used for identification purposes only."
+            question: "2. Do you ship to all 50 U.S. states?",
+            answer: "Yes, we ship to all 50 states within the United States. Orders over $50 qualify for free standard shipping. Standard delivery typically takes 5 to 7 business days depending on your location. Expedited shipping options are available at checkout for an additional fee."
         },
         {
-            question: "3. Where do you ship?",
-            answer: "We currently ship across the United States. Shipping availability may vary based on location and carrier service."
+            question: "3. What is your return policy?",
+            answer: "We offer a 30-day return policy on most products. Items must be returned in their original packaging and in unused condition. Once we receive and inspect the return, we process refunds within 5 to 10 business days. Please visit our Shipping & Returns page for complete details."
         },
         {
-            question: "4. Do you offer free shipping?",
-            answer: "Yes, free shipping may be available on qualifying orders. Shipping eligibility and conditions are shown at checkout."
+            question: "4. Do your products come with a warranty?",
+            answer: "All products sold through Neo Printix include the manufacturer's standard warranty. Warranty terms and duration vary by brand and model. We recommend checking the product listing or the manufacturer's website for specific warranty details for the item you are interested in."
         },
         {
-            question: "5. How long does delivery take?",
-            answer: "Estimated delivery time within the United States is typically 3–7 business days. Delivery times are estimates and may vary depending on location, carrier delays, weather conditions, or other external factors."
+            question: "5. How do I decide between an inkjet and a laser printer?",
+            answer: "Inkjet printers are generally better for photo printing and occasional use, with lower upfront costs. Laser printers excel at high-volume text printing with faster speeds and lower cost per page over time. If you print frequently or need sharp text documents, a laser printer is usually the more economical choice. Our buying guides can help you compare in detail."
         },
         {
-            question: "6. How can I track my order?",
-            answer: "Once your order is shipped, you will receive a tracking number via email. You can use this to track your shipment through the carrier's website."
+            question: "6. Can I print from my phone or tablet?",
+            answer: "Many of the printers we sell support mobile printing through Wi-Fi, AirPrint (for Apple devices), or manufacturer-specific apps. Check the product specifications to confirm mobile printing compatibility for the model you are considering."
         },
         {
-            question: "7. What is your return policy?",
-            answer: "We offer a 30-day return window for eligible items. Products must be unused and in their original packaging unless defective. For full details, please refer to our Return & Refund Policy."
+            question: "7. Do you sell ink, toner, or replacement parts?",
+            answer: "Our focus is on printers and scanners. For ink, toner, and replacement parts, we recommend purchasing directly from the manufacturer or an authorized supplies retailer to ensure compatibility and quality."
         },
+        
         {
-            question: "8. How long does it take to receive a refund?",
-            answer: "Refunds are processed within 3–5 business days after the returned item is received and inspected. Final timing may depend on your payment provider."
-        },
-        {
-            question: "9. What if I receive a damaged or incorrect item?",
-            answer: "If your order arrives damaged or incorrect, please contact us within 48 hours of delivery and provide photos of the product and packaging. We will arrange a replacement or refund as appropriate."
-        },
-        {
-            question: "10. Can I cancel my order?",
-            answer: "Orders can be canceled before shipment only. Once shipped, cancellations are not possible, but you may return the item according to our Return & Refund Policy."
-        },
-        {
-            question: "11. Do your products come with a warranty?",
-            answer: "Yes, most products include a manufacturer warranty where applicable. Warranty terms are provided by the respective brand."
-        },
-        {
-            question: "12. Do you provide technical support?",
-            answer: "We offer general product guidance and assistance, but we do not provide official manufacturer technical support. For detailed technical issues or warranty claims, customers may need to contact the manufacturer directly."
-        },
-        {
-            question: "13. How is my personal information protected?",
-            answer: "We take privacy seriously and only collect the information necessary to process orders and provide customer support. We do not sell or share personal data for advertising purposes. For more details, please review our Privacy Policy."
-        },
-        {
-            question: "14. Do you use cookies or tracking technologies?",
-            answer: "We use essential cookies only to ensure website functionality, such as cart and checkout features. We do not use advertising or tracking cookies."
-        },
-        {
-            question: "15. How can I contact customer support?",
+            question: "8. How can I contact customer support?",
             answer: "You can reach Innovation Dynamics Group LLC via email at support@innovationdynamicsgroup.com or call +1-612-445-9132. Our business address is 11397 Quincy St NE, Blaine, MN 55434."
         }
     ];

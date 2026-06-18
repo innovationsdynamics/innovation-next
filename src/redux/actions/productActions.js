@@ -26,28 +26,18 @@ import {
     PRODUCT_DELETE_REVIEW_FAIL,
 } from '../constants/productConstants';
 
-export const listProducts = (search = '', category = '', pageNumber = 1, brand = '', usageCategory = '', pageSize = null, countAll = false, nonHpPage = false) => async (dispatch) => {
+export const listProducts = (search = '', category = '', pageNumber = 1, brand = '', usageCategory = '', pageSize = null) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_LIST_REQUEST });
 
         // Encode parameters to handle special characters like '&' in category names
         const searchParam = encodeURIComponent(search);
         const categoryParam = encodeURIComponent(category);
-        const brandParam = encodeURIComponent(brand);
         const usageCategoryParam = encodeURIComponent(usageCategory);
 
         let url = `/api/products?search=${searchParam}&category=${categoryParam}&page=${pageNumber}`;
         if (pageSize) {
             url += `&limit=${pageSize}`;
-        }
-        if (countAll) {
-            url += `&countAll=true`;
-        }
-        if (nonHpPage) {
-            url += `&nonHpPage=true`;
-        }
-        if (brand && brand !== 'all') {
-            url += `&brand=${brandParam}`;
         }
         if (usageCategory) {
             url += `&usageCategory=${usageCategoryParam}`;
