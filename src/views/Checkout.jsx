@@ -31,10 +31,6 @@ const Checkout = () => {
     const [clover, setClover] = useState(null);
     const [cloverReady, setCloverReady] = useState(false);
     const [agreedToTerms, setAgreedToTerms] = useState(false);
-    const [rates, setRates] = useState([]);
-    const [selectedRate, setSelectedRate] = useState(null);
-    const [fetchingRates, setFetchingRates] = useState(false);
-    const [ratesError, setRatesError] = useState(null);
     const [cardholderName, setCardholderName] = useState(userInfo?.name || '');
     const [customAlert, setCustomAlert] = useState({ show: false, message: '' });
 
@@ -70,7 +66,7 @@ const Checkout = () => {
             router.push('/cart');
         } else if (!userInfo) {
             router.push('/login?redirect=checkout');
-        } else if (cloverReady && window.Clover && step === 3) { // Only try when we're on step 3
+        } else if (cloverReady && window.Clover && step === 2) { // Only try when we're on step 2
             // Initialize when SDK is ready and we're on payment step
             setTimeout(() => {
                 const containers = {
@@ -109,21 +105,21 @@ const Checkout = () => {
                         console.error("Clover initialization error:", err);
                     }
                 }
-            }, 500); // Reduced timeout
+            }, 500);
         }
     }, [userInfo, cartItems, router, cloverReady, step]);
 
     const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
     const taxPrice = 0; // Tax removed per user request
     
-    // Fixed Shipping Rule: Free over $50, otherwise use selected rate or fallback
-    const shippingPrice = subtotal >= 50 ? 0 : (selectedRate ? parseFloat(selectedRate.rate) : 45);
+    // Always free shipping
+    const shippingPrice = 0;
     const totalPrice = subtotal + shippingPrice;
 
     const submitShippingHandler = async (e) => {
         e.preventDefault();
         
-        // 1. Check country first
+        // Check country first
         if (country.toUpperCase() !== 'US' && country.toUpperCase() !== 'UNITED STATES' && country.toUpperCase() !== 'USA')  {
             setCustomAlert({ show: true, message: 'Sorry, we do not currently deliver to your location.' });
             return;
@@ -131,54 +127,8 @@ const Checkout = () => {
 
         dispatch(saveShippingAddress({ address, city, state: province, postalCode, country, phone }));
 
-        if (subtotal >= 50) {
-            // Orders >= $50: Free shipping
-            setSelectedRate({
-                service: 'Free Shipping',
-                carrier: 'Standard Shipping',
-                rate: 0,
-                est_delivery_days: 'Standard Shipping'
-            });
-            setStep(3); // Skip to payment
-        } else {
-            // Orders < $50: Use EasyPost
-            try {
-                setFetchingRates(true);
-                setRatesError(null);
-                const { data } = await axios.post(`/api/shipping/rates`, {
-                    shippingAddress: { address, city, state: province, postalCode, country, phone },
-                    cartItems
-                });
-                
-                if (data && data.length > 0) {
-                    setRates(data);
-                    // Select cheapest by default
-                    const cheapest = data.reduce((prev, curr) => parseFloat(prev.rate) < parseFloat(curr.rate) ? prev : curr);
-                    setSelectedRate(cheapest);
-                } else {
-                    setRatesError('No shipping rates found for this address. Falling back to flat rate.');
-                    setSelectedRate({
-                        service: 'Flat Rate Shipping',
-                        carrier: 'Standard Delivery',
-                        rate: 45,
-                        est_delivery_days: '5-7'
-                    });
-                }
-                setStep(2); // Go to shipping method selection
-            } catch (err) {
-                console.error("Error fetching rates:", err);
-                setRatesError('Failed to calculate shipping. Using flat rate.');
-                setSelectedRate({
-                    service: 'Flat Rate Shipping',
-                    carrier: 'Standard Delivery',
-                    rate: 45,
-                    est_delivery_days: '5-7'
-                });
-                setStep(3); // Skip to payment with fallback rate if API fails
-            } finally {
-                setFetchingRates(false);
-            }
-        }
+        // Always skip to payment
+        setStep(2);
         window.scrollTo(0, 0);
     };
 
@@ -284,11 +234,7 @@ const Checkout = () => {
                         </span>
                         <ChevronRight size={16} className="text-gray-300" />
                         <span className={step >= 2 ? "text-[#024ad8] bg-blue-50 px-3 py-1.5 border border-blue-100 rounded-sm" : "text-gray-300 px-3 py-1.5"}>
-                            2. Method
-                        </span>
-                        <ChevronRight size={16} className="text-gray-300" />
-                        <span className={step >= 3 ? "text-[#024ad8] bg-blue-50 px-3 py-1.5 border border-blue-100 rounded-sm" : "text-gray-300 px-3 py-1.5"}>
-                            3. Payment
+                            2. Payment
                         </span>
                     </div>
                 </div>
@@ -329,16 +275,12 @@ const Checkout = () => {
                                 <div className="flex justify-between items-center text-sm text-gray-500">
                                     <div className="flex items-center gap-2">
                                         <span>Shipping</span>
-                                        {shippingPrice === 0 && (
-                                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold text-green-700 bg-green-100 border border-green-200">
-                                                <Check size={10} className="mr-1" />
-                                                Free Shipping
-                                            </span>
-                                        )}
+                                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-bold text-green-700 bg-green-100 border border-green-200">
+                                            <Check size={10} className="mr-1" />
+                                            Free Shipping
+                                        </span>
                                     </div>
-                                    <span className={shippingPrice === 0 ? "text-[#024ad8] font-bold" : "text-black font-semibold"}>
-                                        {shippingPrice === 0 ? 'Free' : `$${shippingPrice.toFixed(2)}`}
-                                    </span>
+                                    <span className="text-[#024ad8] font-bold">Free</span>
                                 </div>
                             </div>
 
@@ -439,68 +381,17 @@ const Checkout = () => {
                                     <div className="mt-8 pt-6 border-t border-gray-100">
                                         <button
                                             type="submit"
-                                            disabled={fetchingRates}
-                                            className="w-full bg-black text-white py-4 rounded-sm font-bold text-sm hover:bg-[#024ad8] transition-all flex items-center justify-center gap-3 shadow-lg disabled:opacity-50"
+                                            className="w-full bg-black text-white py-4 rounded-sm font-bold text-sm hover:bg-[#024ad8] transition-all flex items-center justify-center gap-3 shadow-lg"
                                         >
-                                            {fetchingRates ? <><Loader2 className="animate-spin" size={18} /> Calculating...</> : <>Continue to Shipping Method <ChevronRight size={16} /></>}
+                                            Continue to Payment <ChevronRight size={16} />
                                         </button>
                                     </div>
                                 </form>
                             </div>
                         </div>
 
-                        {/* STEP 2: SHIPPING METHOD */}
+                        {/* STEP 2: PAYMENT */}
                         <div className={step === 2 ? "block" : "hidden"}>
-                            <div className="bg-white rounded-sm shadow-sm border border-gray-100 p-7 sm:p-10">
-                                <div className="flex items-center justify-between mb-8">
-                                    <div className="flex items-center gap-4">
-                                        <div className="p-3 bg-[#F8F9FA] text-[#024ad8] rounded-sm">
-                                            <Truck size={24} />
-                                        </div>
-                                        <h2 className="text-xl font-bold text-black">Shipping Method</h2>
-                                    </div>
-                                    <button onClick={() => setStep(1)} className="text-sm text-[#024ad8] hover:underline font-medium">Edit Address</button>
-                                </div>
-
-                                <div className="space-y-4">
-                                    {rates.length > 0 ? (
-                                        rates.map((rate) => (
-                                            <div 
-                                                key={rate.id}
-                                                onClick={() => setSelectedRate(rate)}
-                                                className={`flex items-center justify-between p-4 rounded-sm border cursor-pointer transition-all ${selectedRate?.id === rate.id ? 'border-[#024ad8] bg-blue-50/50 shadow-sm' : 'border-gray-100 bg-white hover:border-gray-300'}`}
-                                            >
-                                                <div className="flex items-center gap-4">
-                                                    <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${selectedRate?.id === rate.id ? 'border-[#024ad8]' : 'border-gray-200'}`}>
-                                                        {selectedRate?.id === rate.id && <div className="w-2.5 h-2.5 bg-[#024ad8] rounded-full"></div>}
-                                                    </div>
-                                                    <div>
-                                                        <p className="text-sm font-bold text-black">{rate.service}</p>
-                                                        <p className="text-xs text-gray-400 font-medium">{rate.carrier} • {rate.est_delivery_days || '3-5'} business days</p>
-                                                    </div>
-                                                </div>
-                                                <span className="font-bold text-black">${parseFloat(rate.rate).toFixed(2)}</span>
-                                            </div>
-                                        ))
-                                    ) : (
-                                        <div className="text-center py-10 border-2 border-dashed border-gray-100 rounded-sm">
-                                            <p className="text-gray-400 text-sm font-medium">No custom rates available for this location.</p>
-                                            <p className="text-xs text-gray-300 mt-1">Standard Flat Rate will be applied.</p>
-                                        </div>
-                                    )}
-
-                                    <button
-                                        onClick={() => setStep(3)}
-                                        className="w-full bg-black text-white py-4 rounded-sm font-bold text-sm hover:bg-[#024ad8] transition-all mt-8 flex items-center justify-center gap-3 shadow-lg"
-                                    >
-                                        Continue to Payment <ChevronRight size={16} />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* STEP 3: PAYMENT (Always mounted, hidden until needed) */}
-                        <div className={step === 3 ? "block" : "hidden"}>
                             <div className="bg-white rounded-sm shadow-sm border border-gray-100 p-7 sm:p-10">
                                 <div className="flex items-center justify-between mb-8">
                                     <div className="flex items-center gap-4">
@@ -510,10 +401,10 @@ const Checkout = () => {
                                         <h2 className="text-xl font-bold text-black">Payment Details</h2>
                                     </div>
                                     <button
-                                        onClick={() => setStep(subtotal >= 50 ? 1 : 2)}
+                                        onClick={() => setStep(1)}
                                         className="text-sm text-[#024ad8] hover:text-black font-medium transition-all hover:underline"
                                     >
-                                        Edit {subtotal >= 50 ? 'Address' : 'Shipping'}
+                                        Edit Address
                                     </button>
                                 </div>
 
@@ -525,9 +416,9 @@ const Checkout = () => {
                                                 <p className="text-3xl font-bold text-white">${totalPrice.toFixed(2)}</p>
                                             </div>
                                             <div className="text-right">
-                                                <p className="text-[10px] text-[#024ad8] font-bold uppercase tracking-widest mb-1">Selected Method</p>
+                                                <p className="text-[10px] text-[#024ad8] font-bold uppercase tracking-widest mb-1">Shipping Method</p>
                                                 <p className="text-xs text-gray-300 font-medium">
-                                                    {selectedRate?.service} ({shippingPrice === 0 ? 'FREE' : `$${shippingPrice.toFixed(2)}`})
+                                                    Free Shipping (FREE)
                                                 </p>
                                             </div>
                                         </div>
