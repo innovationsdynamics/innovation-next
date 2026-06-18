@@ -1,243 +1,179 @@
-import React from "react";
-import {
-  ShieldCheck,
-  BadgeCheck,
-  Zap,
-  Wind,
-  Droplets,
-  FileWarning,
-  Sparkles,
-  HeartHandshake,
-  Phone,
-  Mail,
-  MapPin,
-  Recycle,
-} from "lucide-react";
-
-const sections = [
-  {
-    icon: <BadgeCheck className="w-6 h-6 text-[#024ad8]" />,
-    title: "Manufacturer Warranty",
-    points: [
-      "Warranty coverage is provided by the original manufacturer.",
-      "Coverage duration varies depending on the product and brand.",
-      "Register eligible products with the manufacturer when required.",
-      "Keep your purchase confirmation for future warranty claims.",
-      "Warranty service is handled directly through the manufacturer.",
-    ],
-  },
-  {
-    icon: <Zap className="w-6 h-6 text-[#024ad8]" />,
-    title: "Electrical Safety",
-    points: [
-      "Use only the supplied power cable or an approved replacement.",
-      "Connect devices to a properly grounded electrical outlet.",
-      "Avoid overloaded extension cords or power strips.",
-      "Disconnect the device during severe electrical storms.",
-      "Do not attempt to disassemble or repair internal components.",
-    ],
-  },
-  {
-    icon: <Wind className="w-6 h-6 text-[#024ad8]" />,
-    title: "Proper Ventilation",
-    points: [
-      "Place your printer in an open, well-ventilated location.",
-      "Leave sufficient space around all ventilation openings.",
-      "Avoid enclosed cabinets while the device is operating.",
-      "Keep vents free from dust and obstructions.",
-      "Turn off the device immediately if unusual heat, smoke, or odors appear.",
-    ],
-  },
-  {
-    icon: <Droplets className="w-6 h-6 text-[#024ad8]" />,
-    title: "Handling Ink & Toner",
-    points: [
-      "Avoid touching electrical contacts or imaging drums.",
-      "Wash exposed skin thoroughly after accidental contact.",
-      "Store cartridges in a cool, dry environment.",
-      "Recycle used cartridges whenever possible.",
-      "Keep printing supplies away from children and pets.",
-    ],
-  },
-  {
-    icon: <FileWarning className="w-6 h-6 text-[#024ad8]" />,
-    title: "Resolving Paper Jams",
-    points: [
-      "Power off the printer before removing jammed paper.",
-      "Allow hot internal components to cool when necessary.",
-      "Remove paper carefully in the direction of the paper path.",
-      "Inspect the printer for remaining paper fragments.",
-      "Use paper types recommended by the manufacturer.",
-    ],
-  },
-  {
-    icon: <Sparkles className="w-6 h-6 text-[#024ad8]" />,
-    title: "Cleaning & Maintenance",
-    points: [
-      "Switch off and unplug the printer before cleaning.",
-      "Use only soft, lint-free cloths.",
-      "Apply cleaning solution to the cloth instead of directly on the device.",
-      "Run built-in maintenance utilities when available.",
-      "Avoid abrasive cleaners or harsh chemicals.",
-    ],
-  },
-  {
-    icon: <HeartHandshake className="w-6 h-6 text-[#024ad8]" />,
-    title: "Product Care",
-    points: [
-      "Protect equipment from direct sunlight and excessive humidity.",
-      "Operate inkjet printers regularly to prevent ink drying.",
-      "Use genuine or manufacturer-approved supplies whenever possible.",
-      "Keep firmware and drivers up to date.",
-      "Store equipment in a clean, dust-free environment.",
-    ],
-  },
-];
+import React from 'react';
 
 function WarrantySafety() {
   return (
-    <div className="bg-white pt-28 pb-20">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="bg-white min-h-screen pt-28 pb-16 px-6 font-sans text-left text-gray-800">
+      <div className="max-w-4xl mx-auto text-left">
+        <header className="mb-12 border-b border-gray-100 pb-8 text-left">
+          <h1 className="text-4xl font-bold text-black mb-2">Warranty & Safety Information</h1>
+          <div className="flex flex-col sm:flex-row gap-6 text-xs text-gray-400 font-medium whitespace-nowrap">
+            <p>Last Updated: June 18, 2026</p>
+          </div>
+        </header>
 
-        {/* Hero */}
-        <div className="max-w-4xl">
-          <span className="uppercase tracking-[0.3em] text-[#024ad8] font-bold text-xs">
-            Support Center
-          </span>
+        <div className="space-y-6 text-gray-700 leading-relaxed font-normal text-sm md:text-base">
+          <div>
+            <h2 className="text-xl font-bold text-black mb-2 mt-8">Understanding Your Coverage</h2>
+            <p>
+              At <strong>Innovation Dynamics Group LLC</strong>, we want you to get the most out of your printing and scanning equipment. This page provides essential information about manufacturer warranties, safe operation practices, and proper care recommendations to ensure your devices perform optimally for years to come. We believe that understanding your equipment and following proper safety guidelines leads to a better experience for everyone.
+            </p>
+          </div>
 
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mt-4">
-            Warranty & Safety Information
-          </h1>
+          <div>
+            <h2 className="text-xl font-bold text-black mb-2 mt-8">Product Warranty</h2>
+            <p>
+              All products sold by Innovation Dynamics Group LLC are covered by the manufacturer's warranty as specified by each brand. Warranty periods and coverage vary by product and manufacturer.
+            </p>
+            <ul className="list-disc pl-6 space-y-1 mt-2 mb-4">
+              <li>Warranty terms set by each manufacturer</li>
+              <li>Coverage varies by product type and brand</li>
+              <li>Register products with manufacturer for coverage</li>
+              <li>Retain proof of purchase for warranty claims</li>
+              <li>Contact manufacturer directly for warranty service</li>
+            </ul>
+          </div>
 
-          <p className="text-sm text-gray-500 mt-3">
-            Last Updated: June 18, 2026
-          </p>
+          <div>
+            <h2 className="text-xl font-bold text-black mb-2 mt-8">Electrical Safety</h2>
+            <p>
+              Printers and scanners are electrical devices that require proper handling to ensure safe operation. Following these guidelines protects both you and your equipment.
+            </p>
+            <ul className="list-disc pl-6 space-y-1 mt-2 mb-4">
+              <li>Use only the provided power cord and adapter</li>
+              <li>Plug into a grounded electrical outlet</li>
+              <li>Avoid extension cords that may overload circuits</li>
+              <li>Unplug during electrical storms</li>
+              <li>Never modify or repair electrical components yourself</li>
+            </ul>
+          </div>
 
-          <p className="mt-8 text-lg leading-8 text-gray-600">
-            At <strong>Innovation Dynamics Group LLC</strong>, we want every
-            customer to enjoy a safe and reliable experience with their printing
-            equipment. This page outlines important warranty information,
-            product safety recommendations, maintenance tips, and best practices
-            to help maximize the performance and lifespan of your printer or
-            scanner.
-          </p>
-        </div>
+          <div>
+            <h2 className="text-xl font-bold text-black mb-2 mt-8">Proper Ventilation</h2>
+            <p>
+              Laser printers and some inkjet models generate heat during operation and require adequate ventilation to function properly and safely.
+            </p>
+            <ul className="list-disc pl-6 space-y-1 mt-2 mb-4">
+              <li>Place in well-ventilated areas</li>
+              <li>Maintain several inches clearance on all sides</li>
+              <li>Avoid enclosed cabinets or closets</li>
+              <li>Never block ventilation openings</li>
+              <li>Turn off immediately if you notice smoke or unusual odors</li>
+            </ul>
+          </div>
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mt-16">
-          {sections.map((item, index) => (
-            <div
-              key={index}
-              className="bg-[#F8F9FA] rounded-xl p-8 border border-gray-200 hover:border-[#024ad8]/30 transition"
-            >
-              <div className="w-12 h-12 rounded-lg bg-[#024ad8]/10 flex items-center justify-center mb-5">
-                {item.icon}
-              </div>
+          <div>
+            <h2 className="text-xl font-bold text-black mb-2 mt-8">Handling Ink and Toner</h2>
+            <p>
+              Ink and toner cartridges should be handled with care to avoid spills, stains, and potential health concerns.
+            </p>
+            <ul className="list-disc pl-6 space-y-1 mt-2 mb-4">
+              <li>Avoid touching print head contacts or toner drum</li>
+              <li>Wash skin thoroughly if contact occurs</li>
+              <li>Seek fresh air if toner is inhaled</li>
+              <li>Store cartridges in cool, dry places</li>
+              <li>Dispose responsibly through recycling programs</li>
+            </ul>
+          </div>
 
-              <h3 className="text-xl font-bold text-gray-900 mb-5">
-                {item.title}
-              </h3>
+          <div>
+            <h2 className="text-xl font-bold text-black mb-2 mt-8">Dealing with Paper Jams</h2>
+            <p>
+              Paper jams are common issues that can usually be resolved safely with proper technique and patience.
+            </p>
+            <ul className="list-disc pl-6 space-y-1 mt-2 mb-4">
+              <li>Turn off printer and allow to cool first</li>
+              <li>Open access panels as directed in manual</li>
+              <li>Pull paper gently in the paper path direction</li>
+              <li>Check for small paper fragments</li>
+              <li>Use manufacturer-recommended paper types</li>
+            </ul>
+          </div>
 
-              <ul className="space-y-3">
-                {item.points.map((point, i) => (
-                  <li key={i} className="flex gap-3 text-gray-600">
-                    <ShieldCheck className="w-5 h-5 text-[#024ad8] flex-shrink-0 mt-0.5" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+          <div>
+            <h2 className="text-xl font-bold text-black mb-2 mt-8">Cleaning and Maintenance</h2>
+            <p>
+              Regular cleaning helps maintain print quality and extends the life of your equipment significantly.
+            </p>
+            <ul className="list-disc pl-6 space-y-1 mt-2 mb-4">
+              <li>Turn off and unplug before cleaning</li>
+              <li>Use soft, lint-free cloths only</li>
+              <li>Apply glass cleaner to cloth, not directly</li>
+              <li>Use built-in cleaning utilities when available</li>
+              <li>Avoid harsh chemicals or abrasive materials</li>
+            </ul>
+          </div>
 
-        {/* Contact */}
-        <div className="mt-20 bg-[#024ad8] rounded-2xl p-10 text-white">
-          <h2 className="text-3xl font-bold mb-4">
-            Need Assistance?
-          </h2>
+          <div>
+            <h2 className="text-xl font-bold text-black mb-2 mt-8">Product Care Recommendations</h2>
+            <p>
+              Proper care and handling will maximize the performance and longevity of your printing equipment.
+            </p>
+            <ul className="list-disc pl-6 space-y-1 mt-2 mb-4">
+              <li>Keep away from direct sunlight and humidity</li>
+              <li>Use printer regularly to prevent ink drying</li>
+              <li>Cover device when not in use</li>
+              <li>Use manufacturer-recommended supplies</li>
+              <li>Update firmware and drivers regularly</li>
+            </ul>
+          </div>
 
-          <p className="text-blue-100 max-w-3xl leading-8 mb-10">
-            If you're experiencing product issues, have questions about an
-            order, or need general assistance, our support team is ready to
-            help. Warranty claims should be submitted directly to the product
-            manufacturer according to their warranty policy.
-          </p>
+          <div>
+            <h2 className="text-xl font-bold text-black mb-2 mt-8">When to Contact Us</h2>
+            <p>
+              While many issues can be resolved with basic troubleshooting, some situations require professional assistance. Please reach out if you experience any of the following:
+            </p>
+            <ul className="list-disc pl-6 space-y-1 mt-2 mb-4">
+              <li>Persistent error messages that basic troubleshooting doesn't resolve</li>
+              <li>Unusual noises or vibrations during operation</li>
+              <li>Print quality issues persisting after cleaning and maintenance</li>
+              <li>Connectivity problems that troubleshooting doesn't fix</li>
+              <li>Signs of electrical problems such as sparks or burning smells</li>
+            </ul>
+            <p className="mt-2">
+              For warranty issues, contact manufacturer directly. Contact Innovation Dynamics Group LLC for orders & inquiries.
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div>
+            <h2 className="text-xl font-bold text-black mb-2 mt-8">Environmental Responsibility</h2>
+            <p>
+              We encourage responsible disposal of printing supplies and equipment. Many manufacturers offer recycling programs for used ink and toner cartridges. These programs help reduce environmental impact and often provide prepaid shipping labels for easy returns. When disposing of old equipment, check with local recycling facilities for proper e-waste disposal options. Together, we can minimize the environmental footprint of our printing needs.
+            </p>
+          </div>
 
-            <div className="flex gap-4">
-              <Mail className="w-7 h-7 flex-shrink-0" />
+          <div>
+            <h2 className="text-xl font-bold text-black mb-2 mt-8">Contact Us</h2>
+            <p>If you have questions about this policy or need assistance, please contact us:</p>
+            
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6 p-6 bg-gray-50 rounded-lg border border-gray-100 text-sm">
               <div>
-                <h4 className="font-semibold text-lg">Email</h4>
-                <p>support@innovationdynamicsgroup.com</p>
-                <p className="text-blue-100 text-sm mt-1">
-                  We typically respond within 24 hours.
-                </p>
+                <p className="font-bold text-black mb-1">Email</p>
+                <p className="text-gray-600">support@innovationdynamicsgroup.com</p>
+                <p className="text-xs text-gray-400 mt-1">We typically respond within 24 hours</p>
               </div>
-            </div>
-
-            <div className="flex gap-4">
-              <Phone className="w-7 h-7 flex-shrink-0" />
               <div>
-                <h4 className="font-semibold text-lg">Phone</h4>
-                <p>+1 (612) 445-9132</p>
-                <p className="text-blue-100 text-sm mt-1">
-                  Available during normal business hours.
-                </p>
+                <p className="font-bold text-black mb-1">Phone</p>
+                <p className="text-gray-600">+1-612-445-9132</p>
+                <p className="text-xs text-gray-400 mt-1">Available during business hours</p>
               </div>
-            </div>
-
-            <div className="flex gap-4">
-              <MapPin className="w-7 h-7 flex-shrink-0" />
               <div>
-                <h4 className="font-semibold text-lg">Address</h4>
-                <p>
-                  11397 Quincy St NE
-                  <br />
-                  Blaine, MN 55434
-                  <br />
+                <p className="font-bold text-black mb-1">Address</p>
+                <p className="text-gray-600 whitespace-pre-line">
+                  Innovation Dynamics Group LLC{"\n"}
+                  11397 Quincy St NE,{"\n"}
+                  Blaine, MN 55434{"\n"}
                   United States
                 </p>
               </div>
             </div>
-
           </div>
         </div>
 
-        {/* Environment */}
-        <div className="mt-20 bg-green-50 border border-green-200 rounded-xl p-10">
-          <div className="flex items-center gap-4 mb-5">
-            <Recycle className="w-10 h-10 text-green-600" />
-            <h2 className="text-3xl font-bold text-gray-900">
-              Environmental Responsibility
-            </h2>
-          </div>
-
-          <p className="text-gray-600 leading-8">
-            Innovation Dynamics Group LLC encourages responsible recycling of
-            ink cartridges, toner cartridges, and electronic equipment. Many
-            manufacturers provide dedicated recycling programs, making it easy
-            to return used consumables for environmentally responsible
-            processing. When replacing older printers or scanners, please use
-            authorized e-waste recycling facilities to reduce environmental
-            impact and help conserve valuable resources.
+        <footer className="mt-24 pt-10 border-t border-gray-100 text-center">
+          <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">
+            Innovation Dynamics Group LLC © 2026
           </p>
-
-          <div className="flex flex-wrap gap-4 mt-8">
-            <span className="bg-white border rounded-full px-5 py-2 font-medium">
-              ♻️ Cartridge Recycling
-            </span>
-
-            <span className="bg-white border rounded-full px-5 py-2 font-medium">
-              🖨️ Printer Recycling
-            </span>
-
-            <span className="bg-white border rounded-full px-5 py-2 font-medium">
-              🌎 Responsible E-Waste Disposal
-            </span>
-          </div>
-        </div>
-
+        </footer>
       </div>
     </div>
   );

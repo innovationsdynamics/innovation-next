@@ -229,9 +229,6 @@ const About = () => {
                 </div>
             </section>
 
-
-            {/* Our mission  */}
-
             {/* Our Mission */}
 
            <section className="py-16 sm:py-24 bg-[#F8F9FA] border-t border-gray-100 overflow-hidden">
